@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import Text1 from './Text1';
 import Video1 from './Video1';
 import Video2 from './Video2';
