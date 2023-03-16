@@ -9,7 +9,7 @@ const App = () => {
       <GlobalStyle />
       <Canvas gl={{ antialias: false }} dpr={window.devicePixelRatio} className="canvas">
         <Sparkles count={1000} size={3} scale={[20, 10, 250]} position={[0, 0, -125]} />
-        <ambientLight intensity={0.8} />
+        <ambientLight intensity={1} />
         <ScrollControls pages={80} damping={0.4}>
           <Project />
         </ScrollControls>

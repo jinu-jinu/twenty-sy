@@ -17,6 +17,8 @@ const Video = React.forwardRef(
       const vid = document.createElement('video');
       vid.loop = true;
       vid.muted = true;
+      vid.setAttribute('crossorigin', 'anonymous');
+      vid.playsInline = true;
 
       vid.innerHTML = `
         <source src=${url} type="video/mp4" />
@@ -42,7 +44,12 @@ const Video = React.forwardRef(
               side={THREE.DoubleSide}
               ref={ref as any}
             >
-              <videoTexture attach="map" args={[video]} />
+              <videoTexture
+                attach="map"
+                args={[video]}
+                needsUpdate={true}
+                encoding={THREE.sRGBEncoding}
+              />
             </meshStandardMaterial>
           </mesh>
         </Suspense>
