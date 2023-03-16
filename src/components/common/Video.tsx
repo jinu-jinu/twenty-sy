@@ -18,7 +18,7 @@ const Video = React.forwardRef(
       vid.loop = true;
       vid.muted = true;
       vid.setAttribute('crossorigin', 'Anonymous');
-      video.setAttribute('playsinline', 'true');
+      vid.setAttribute('playsinline', 'true');
       vid.innerHTML = `
         <source src=${url} type="video/mp4" />
       `;
