@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Moments</title>
+    <style>
+      @keyframes load {
+        0% { transform: translateY(0) }
+        20% { transform: translateY(-14px) }
+        40% { transform: translateY(0) }
+      }
+      
+      .loading{
+        background-color: #000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .loading-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
+
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .loading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .circle{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 6px;
+        animation: load 2s ease-in-out infinite;
+        background-color: #6B54BF;
+        box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.4);
+        -webkit-box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.4);
+        -moz-box-shadow: 0px 0px 4px 1px rgba(255,255,255,0.4);
+      }
+
+      .circle:nth-child(2){
+        animation-delay: 0.2s;
+        background-color: #215BA6;
+      }
+
+      .circle:nth-child(3){
+        animation-delay: 0.4s;
+        background-color: #13F2A1;
+      }
+
+      .circle:nth-child(4){
+        animation-delay: 0.6s;
+        background-color: #F2B84B;
+      }
+
+      .circle:nth-child(5){
+        animation-delay: 0.8s;
+        background-color: #F24444;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <div id="loading">
+      <div class="loading-wrapper">
+        <div class="loading">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
