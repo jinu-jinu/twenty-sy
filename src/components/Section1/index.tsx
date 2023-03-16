@@ -17,6 +17,18 @@ const Section1 = () => {
     <group>
       <Part0 />
       <Part1 />
+      <Suspense fallback={null}>
+        <LazyPart2 />
+      </Suspense>
+      <Suspense fallback={null}>
+        <LazyPart3 />
+      </Suspense>
+      <Suspense fallback={null}>
+        <LazyPart4 />
+      </Suspense>
+      <Suspense fallback={null}>
+        <LazyPart5 />
+      </Suspense>
     </group>
   );
 };

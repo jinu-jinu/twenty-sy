@@ -9,6 +9,9 @@ const Project = () => {
     <group>
       <CameraControl />
       <Section1 />
+      <Suspense fallback={null}>
+        <LazySection2 />
+      </Suspense>
     </group>
   );
 };

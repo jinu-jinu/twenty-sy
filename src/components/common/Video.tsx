@@ -1,4 +1,4 @@
-import React, { Suspense, useMemo } from 'react';
+import React, { Suspense, useMemo, useRef } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 
@@ -15,10 +15,13 @@ const Video = React.forwardRef(
   ({ url, pos, scale, rotation, opacity = 0, isPlay = false }: VideoProps, ref) => {
     const video = useMemo(() => {
       const vid = document.createElement('video');
-      vid.src = url;
-      vid.crossOrigin = 'Annoymous';
       vid.loop = true;
       vid.muted = true;
+
+      vid.innerHTML = `
+        <source src=${url} type="video/mp4" />
+      `;
+
       return vid;
     }, [url]);
 
