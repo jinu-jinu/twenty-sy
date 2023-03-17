@@ -37,22 +37,22 @@ const Section1 = () => {
       <Part0 />
       <Part1 />
 
-      {visiblePt2 && (
+      {/* {visiblePt2 && (
         <Suspense fallback={null}>
           <LazyPart2 />
         </Suspense>
       )}
-      {/* {visiblePt3 && (
+      {visiblePt3 && (
         <Suspense fallback={null}>
           <LazyPart3 />
         </Suspense>
-      )} */}
-      {/* {visiblePt4 && (
+      )}
+      {visiblePt4 && (
         <Suspense fallback={null}>
           <LazyPart4 />
         </Suspense>
-      )} */}
-      {/* {visiblePt5 && (
+      )}
+      {visiblePt5 && (
         <Suspense fallback={null}>
           <LazyPart5 />
         </Suspense>

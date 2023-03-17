@@ -1,18 +1,14 @@
-import { ASPECT } from '@/components/common/constant';
-import Video from '@/components/common/Video';
-import { fillOpacityAni, videoHandler } from '@/utils/animation';
-import { deviceOffset } from '@/utils/media';
-import { Text, useGLTF, useScroll } from '@react-three/drei';
+import { fillOpacityAni, opacityAni } from '@/utils/animation';
+import { Image, Text, useGLTF, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { Group, Mesh } from 'three';
 
-const Video2 = () => {
-  const offset = deviceOffset();
+const Image2 = () => {
   const scroll = useScroll();
+  const group = useRef<Group>(null!);
   const text = useRef<any>();
-  const video = useRef<any>();
-  const ymd = useRef<any>();
   const moon = useGLTF('/model/moon.glb');
   const moonRef = useRef<any>();
 
@@ -20,8 +16,6 @@ const Video2 = () => {
     const scrollOffset = scroll.range(0.067 / 1, 0.01 / 1);
     const visible = scroll.visible(0.067 / 1, 0.02 / 1);
 
-    if (video.current) videoHandler(video.current, scrollOffset);
-    if (ymd.current) fillOpacityAni(ymd.current, scrollOffset);
     if (text.current) fillOpacityAni(text.current, scrollOffset);
 
     if (moonRef.current)
@@ -30,6 +24,12 @@ const Video2 = () => {
         y: visible ? 0.08 : 0,
         z: visible ? 0.08 : 0,
         duration: 1,
+      });
+
+    if (group.current)
+      group.current.children.forEach(c => {
+        const material = (c as Mesh).material;
+        opacityAni(material, scrollOffset);
       });
   });
 
@@ -59,27 +59,40 @@ const Video2 = () => {
         <primitive object={moon.scene} />
       </mesh>
 
-      <Video
-        ref={video}
-        pos={[-offset * 2, -0.6, 0]}
-        url={'/video/section1/pt1/pt1-03.mp4'}
-        scale={[1.5 * ASPECT, 1 * ASPECT, 1]}
-      />
-      <Text
-        fillOpacity={0}
-        ref={ymd}
-        font="./font/Gangwon.ttf"
-        fontSize={0.04}
-        position={[-0.37 - offset * 2, 0.03, 0.05]}
-        color="#ff6932"
-        letterSpacing={0.2}
-      >
-        '21 09 03 "Full moon"
-      </Text>
+      <group ref={group}>
+        <Image
+          url={'/image/section1/pt1/pt1-05.jpg'}
+          scale={[1.5, 1]}
+          position={[0, -0.6, 0]}
+          transparent
+          opacity={1}
+        />
+        <Image
+          url={'/image/section1/pt1/pt1-06.jpg'}
+          scale={[1.5, 1]}
+          position={[2, 0.5, -1]}
+          transparent
+          opacity={1}
+        />
+        <Image
+          url={'/image/section1/pt1/pt1-07.jpg'}
+          scale={[1.5, 1]}
+          position={[-2, 0.7, -0.5]}
+          transparent
+          opacity={1}
+        />
+        <Image
+          url={'/image/section1/pt1/pt1-08.jpg'}
+          scale={[1.5, 1]}
+          position={[-1.8, -1, 0.5]}
+          transparent
+          opacity={1}
+        />
+      </group>
     </group>
   );
 };
 
-export default Video2;
+export default Image2;
 
 useGLTF.preload('/model/moon.glb');
