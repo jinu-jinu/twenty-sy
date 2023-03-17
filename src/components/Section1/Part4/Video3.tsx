@@ -11,17 +11,15 @@ const Video3 = () => {
   const video2 = useRef<any>();
   const ymd1 = useRef<any>();
   const ymd2 = useRef<any>();
-  const [isPlay, setIsPlay] = useState(false);
   const offset = deviceOffset();
 
   useFrame(() => {
     const scrollOffset2 = scroll.range(0.478 / 1, 0.01 / 1);
-    const visible = scroll.visible(0.478 / 1, 0.02 / 1);
 
-    videoHandler(video1.current, scrollOffset2, visible, setIsPlay);
+    videoHandler(video1.current, scrollOffset2);
     fillOpacityAni(ymd1.current, scrollOffset2);
 
-    videoHandler(video2.current, scrollOffset2, visible, setIsPlay);
+    videoHandler(video2.current, scrollOffset2);
     fillOpacityAni(ymd2.current, scrollOffset2);
   });
 
@@ -29,7 +27,6 @@ const Video3 = () => {
     <group>
       <group position={[0.2 + offset * 2, 0.7, 0]}>
         <Video
-          isPlay={isPlay}
           ref={video1}
           url={'/video/section1/pt4/pt4-04.mp4'}
           scale={[1.5 * 1.2, 1 * 1.2, 1]}
@@ -50,7 +47,6 @@ const Video3 = () => {
 
       <group position={[-0.2 + -offset * 2, -0.7, 0]}>
         <Video
-          isPlay={isPlay}
           ref={video2}
           url={'/video/section1/pt4/pt4-05.mp4'}
           scale={[1.5 * 1.2, 1 * 1.2, 1]}

@@ -10,7 +10,6 @@ import gsap from 'gsap';
 const Video2 = () => {
   const offset = deviceOffset();
   const scroll = useScroll();
-  const [isPlay, setIsPlay] = useState(false);
   const text = useRef<any>();
   const video1 = useRef<any>();
   const video2 = useRef<any>();
@@ -26,10 +25,10 @@ const Video2 = () => {
 
     fillOpacityAni(text.current, scrollOffset1);
 
-    videoHandler(video1.current, scrollOffset, visible, setIsPlay);
+    videoHandler(video1.current, scrollOffset);
     fillOpacityAni(ymd1.current, scrollOffset);
 
-    videoHandler(video2.current, scrollOffset, visible, setIsPlay);
+    videoHandler(video2.current, scrollOffset);
     fillOpacityAni(ymd2.current, scrollOffset);
 
     gsap.to(trophyRef.current.scale, {
@@ -69,12 +68,7 @@ const Video2 = () => {
       </group>
 
       <group position={[-0.2 + -offset * 2, 0.6, 0]}>
-        <Video
-          isPlay={isPlay}
-          ref={video1}
-          url={'/video/section1/pt5/pt5-02.mp4'}
-          scale={[1.5, 1, 1]}
-        />
+        <Video ref={video1} url={'/video/section1/pt5/pt5-02.mp4'} scale={[1.5, 1, 1]} />
         <Text
           fillOpacity={0}
           ref={ymd1}
@@ -89,12 +83,7 @@ const Video2 = () => {
       </group>
 
       <group position={[0.2 + offset * 2, -0.6, 0]}>
-        <Video
-          isPlay={isPlay}
-          ref={video2}
-          url={'/video/section1/pt5/pt5-03.mp4'}
-          scale={[1.5, 1, 1]}
-        />
+        <Video ref={video2} url={'/video/section1/pt5/pt5-03.mp4'} scale={[1.5, 1, 1]} />
         <Text
           fillOpacity={0}
           ref={ymd2}

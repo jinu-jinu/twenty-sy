@@ -11,7 +11,6 @@ const Text1 = () => {
   const text2 = useRef<any>();
   const img = useRef<any>();
   const video = useRef<any>();
-  const [isPlay, setIsPlay] = useState(false);
 
   useFrame(() => {
     const scrollOffset1 = scroll.range(0.755 / 1, 0.01 / 1);
@@ -19,7 +18,6 @@ const Text1 = () => {
     const scrollOffset3 = scroll.range(0.78 / 1, 0.01 / 1);
 
     const visible1 = scroll.visible(0.765 / 1, 1);
-    const visible2 = scroll.visible(0.78 / 1, 0.016 / 1);
 
     gsap.to(text1.current, {
       duration: 1,
@@ -48,7 +46,7 @@ const Text1 = () => {
       y: Math.PI * (-0.5 + scrollOffset2 * 0.4),
     });
 
-    videoHandler(video.current, scrollOffset3, visible2, setIsPlay);
+    videoHandler(video.current, scrollOffset3);
   });
 
   return (
@@ -85,7 +83,6 @@ const Text1 = () => {
         귀엽고
       </Text>
       <Video
-        isPlay={isPlay}
         ref={video}
         pos={[0, 0.2, 2]}
         scale={[1.5 / 2, 1 / 2, 1]}

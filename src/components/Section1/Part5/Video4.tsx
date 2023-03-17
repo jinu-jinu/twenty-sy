@@ -8,24 +8,17 @@ const Video4 = () => {
   const scroll = useScroll();
   const video = useRef<any>();
   const ymd = useRef<any>();
-  const [isPlay, setIsPlay] = useState(false);
 
   useFrame(() => {
     const scrollOffset = scroll.range(0.655 / 1, 0.01 / 1);
-    const visible = scroll.visible(0.655 / 1, 0.02 / 1);
 
-    videoHandler(video.current, scrollOffset, visible, setIsPlay);
+    videoHandler(video.current, scrollOffset);
     fillOpacityAni(ymd.current, scrollOffset);
   });
 
   return (
     <group>
-      <Video
-        isPlay={isPlay}
-        ref={video}
-        url={'/video/section1/pt5/pt5-08.mp4'}
-        scale={[1.5, 1, 1]}
-      />
+      <Video ref={video} url={'/video/section1/pt5/pt5-08.mp4'} scale={[1.5, 1, 1]} />
       <Text
         fillOpacity={1}
         ref={ymd}
