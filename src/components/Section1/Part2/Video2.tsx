@@ -3,7 +3,7 @@ import { fillOpacityAni, videoHandler } from '@/utils/animation';
 import { deviceOffset } from '@/utils/media';
 import { Text, useScroll, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Group } from 'three';
 
 const Video2 = () => {
@@ -14,22 +14,21 @@ const Video2 = () => {
   const video2 = useRef<any>();
   const ymd1 = useRef<any>();
   const ymd2 = useRef<any>();
-  const [isPlay, setIsPlay] = useState(false);
 
   useFrame(() => {
     const scrollOffset1 = scroll.range(0.17 / 1, 0.01 / 1);
     const scrollOffset2 = scroll.range(0.175 / 1, 0.01 / 1);
-    const visible = scroll.visible(0.175 / 1, 0.021 / 1);
 
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset1);
-    });
+    if (group.current)
+      group.current.children.forEach(c => {
+        fillOpacityAni<Text>(c as unknown as Text, scrollOffset1);
+      });
 
-    videoHandler(video1.current, scrollOffset2, visible, setIsPlay);
-    fillOpacityAni(ymd1.current, scrollOffset2);
+    if (video1.current) videoHandler(video1.current, scrollOffset2);
+    if (ymd1.current) fillOpacityAni(ymd1.current, scrollOffset2);
 
-    videoHandler(video2.current, scrollOffset2, visible, setIsPlay);
-    fillOpacityAni(ymd2.current, scrollOffset2);
+    if (video2.current) videoHandler(video2.current, scrollOffset2);
+    if (ymd2.current) fillOpacityAni(ymd2.current, scrollOffset2);
   });
 
   const sentence = `
@@ -68,7 +67,6 @@ const Video2 = () => {
 
       <group position={[-offset * 2, 0.7, 0.3]}>
         <Video
-          isPlay={isPlay}
           ref={video1}
           url={'/video/section1/pt2/pt2-02.mp4'}
           scale={[1.5 * 1.2, 1 * 1.2, 1]}
@@ -89,7 +87,6 @@ const Video2 = () => {
 
       <group position={[offset * 2, -0.7, -0.3]}>
         <Video
-          isPlay={isPlay}
           ref={video2}
           url={'/video/section1/pt2/pt2-04.mp4'}
           scale={[1.5 * 1.2, 1 * 1.2, 1]}

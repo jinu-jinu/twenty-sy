@@ -11,10 +11,11 @@ const Image1 = () => {
   useFrame(() => {
     const scrollOffset = scroll.range(0.109 / 1, 0.01 / 1);
 
-    group.current.children.forEach(c => {
-      const material = (c as Mesh).material;
-      opacityAni<typeof material>(material, scrollOffset);
-    });
+    if (group.current)
+      group.current.children.forEach(c => {
+        const material = (c as Mesh).material;
+        opacityAni<typeof material>(material, scrollOffset);
+      });
   });
 
   return (

@@ -10,15 +10,15 @@ const Part0 = () => {
   const images = useRef<any>();
 
   useLayoutEffect(() => {
-    texts.current.children.forEach((child: Text, i: number) => {
-      fillOpacityAni(child, 2);
-    });
+    if (texts.current)
+      texts.current.children.forEach((child: Text, i: number) => {
+        fillOpacityAni(child, 2);
+      });
 
-    images.current.children.forEach((child: Mesh, i: number) => {
-      opacityAni(child.material, 1, 5);
-    });
-
-    return () => {};
+    if (images.current)
+      images.current.children.forEach((child: Mesh, i: number) => {
+        opacityAni(child.material, 1, 5);
+      });
   }, []);
 
   return (

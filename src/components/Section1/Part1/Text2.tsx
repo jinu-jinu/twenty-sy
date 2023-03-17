@@ -10,7 +10,7 @@ const Text2 = () => {
   useFrame(() => {
     const scrollOffset = scroll.range(0.102 / 1, 0.01 / 1);
 
-    fillOpacityAni(text.current, scrollOffset);
+    if (text.current) fillOpacityAni(text.current, scrollOffset);
   });
 
   return (

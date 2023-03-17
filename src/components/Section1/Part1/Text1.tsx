@@ -11,13 +11,14 @@ const Text1 = () => {
   useFrame(() => {
     const scrollOffset = scroll.range(0.028 / 1, 0.01 / 1);
 
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
-    });
+    if (group.current)
+      group.current.children.forEach(c => {
+        fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
+      });
   });
 
   return (
-    <group position={[0, 0, 0]} ref={group}>
+    <group ref={group}>
       <Text fillOpacity={0} font="/font/Prompt.ttf" position={[0, 0.1, 0]} fontSize={0.1}>
         MOMENT#1
       </Text>

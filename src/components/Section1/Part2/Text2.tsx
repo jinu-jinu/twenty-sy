@@ -11,9 +11,10 @@ const Text2 = () => {
   useFrame(() => {
     const scrollOffset = scroll.range(0.19 / 1, 0.01 / 1);
 
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
-    });
+    if (group.current)
+      group.current.children.forEach(c => {
+        fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
+      });
   });
 
   return (

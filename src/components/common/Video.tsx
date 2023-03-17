@@ -1,6 +1,6 @@
-import React, { Suspense, useMemo, useRef } from 'react';
+import React, { Suspense } from 'react';
 import * as THREE from 'three';
-import { useFrame } from '@react-three/fiber';
+import { useVideoTexture } from '@react-three/drei';
 
 type VideoProps = {
   url: string;
@@ -8,27 +8,14 @@ type VideoProps = {
   pos?: [number, number, number];
   rotation?: [number, number, number];
   opacity?: number;
-  isPlay?: boolean;
 };
 
 const Video = React.forwardRef(
-  ({ url, pos, scale, rotation, opacity = 0, isPlay = false }: VideoProps, ref) => {
-    const video = useMemo(() => {
-      const vid = document.createElement('video');
-      vid.loop = true;
-      vid.muted = true;
-      vid.setAttribute('crossorigin', 'Anonymous');
-      vid.setAttribute('playsinline', 'true');
-      vid.innerHTML = `
-        <source src=${url} type="video/mp4" />
-      `;
-
-      return vid;
-    }, []);
-
-    useFrame(() => {
-      if (isPlay) video.play();
-      else video.pause();
+  ({ url, pos, scale, rotation, opacity = 0 }: VideoProps, ref) => {
+    const texture = useVideoTexture(url, {
+      muted: true,
+      loop: true,
+      autoplay: true,
     });
 
     return (
@@ -39,21 +26,16 @@ const Video = React.forwardRef(
             <meshStandardMaterial
               transparent
               opacity={opacity}
-              toneMapped={false}
+              toneMapped={true}
               side={THREE.DoubleSide}
               ref={ref as any}
-            >
-              <videoTexture attach="map" args={[video]} encoding={THREE.sRGBEncoding} />
-            </meshStandardMaterial>
+              map={texture}
+            ></meshStandardMaterial>
           </mesh>
         </Suspense>
       </>
     );
   }
 );
-
-const x = ([]: readonly number[]) => {};
-
-x([1, 2]);
 
 export default Video;

@@ -3,23 +3,21 @@ import Video from '@/components/common/Video';
 import { fillOpacityAni, videoHandler } from '@/utils/animation';
 import { Text, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 const Video3 = () => {
   const scroll = useScroll();
   const text = useRef<any>();
   const video = useRef<any>();
   const ymd = useRef<any>();
-  const [isPlay, setIsPlay] = useState(false);
 
   useFrame(() => {
     const scrollOffset1 = scroll.range(0.082 / 1, 0.01 / 1);
     const scrollOffset2 = scroll.range(0.087 / 1, 0.01 / 1);
-    const visible = scroll.visible(0.087 / 1, 0.021 / 1);
 
-    fillOpacityAni(text.current, scrollOffset1);
-    videoHandler(video.current, scrollOffset2, visible, setIsPlay);
-    fillOpacityAni(ymd.current, scrollOffset2);
+    if (text.current) fillOpacityAni(text.current, scrollOffset1);
+    if (video.current) videoHandler(video.current, scrollOffset2);
+    if (ymd.current) fillOpacityAni(ymd.current, scrollOffset2);
   });
 
   return (
@@ -40,7 +38,6 @@ const Video3 = () => {
 
       <Video
         ref={video}
-        isPlay={isPlay}
         pos={[0, 0.2, 0]}
         url={'/video/section1/pt1/pt1-01.mp4'}
         scale={[1.5 * ASPECT, 1 * ASPECT, 1]}

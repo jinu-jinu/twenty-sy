@@ -2,6 +2,7 @@ import { GlobalStyle } from './globalStyle';
 import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Sparkles } from '@react-three/drei';
 import Project from './components/Section';
+import { Perf } from 'r3f-perf';
 
 const App = () => {
   return (

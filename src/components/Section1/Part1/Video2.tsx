@@ -4,7 +4,7 @@ import { fillOpacityAni, videoHandler } from '@/utils/animation';
 import { deviceOffset } from '@/utils/media';
 import { Text, useGLTF, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const Video2 = () => {
@@ -16,23 +16,29 @@ const Video2 = () => {
   const moon = useGLTF('/model/moon.glb');
   const moonRef = useRef<any>();
 
-  const [isPlay, setIsPlay] = useState(false);
-
   useFrame(() => {
     const scrollOffset = scroll.range(0.067 / 1, 0.01 / 1);
     const visible = scroll.visible(0.067 / 1, 0.02 / 1);
 
-    videoHandler(video.current, scrollOffset, visible, setIsPlay);
-    fillOpacityAni(ymd.current, scrollOffset);
-    fillOpacityAni(text.current, scrollOffset);
+    if (video.current) videoHandler(video.current, scrollOffset);
+    if (ymd.current) fillOpacityAni(ymd.current, scrollOffset);
+    if (text.current) fillOpacityAni(text.current, scrollOffset);
 
-    gsap.to(moonRef.current.scale, {
-      x: visible ? 0.08 : 0,
-      y: visible ? 0.08 : 0,
-      z: visible ? 0.08 : 0,
-      duration: 1,
-    });
+    if (moonRef.current)
+      gsap.to(moonRef.current.scale, {
+        x: visible ? 0.08 : 0,
+        y: visible ? 0.08 : 0,
+        z: visible ? 0.08 : 0,
+        duration: 1,
+      });
   });
+
+  useLayoutEffect(() => {
+    return () => {
+      moonRef.current.geometry.dispose();
+      moonRef.current.material.dispose();
+    };
+  }, []);
 
   return (
     <group position={[0, 0, -10]}>
@@ -55,7 +61,6 @@ const Video2 = () => {
 
       <Video
         ref={video}
-        isPlay={isPlay}
         pos={[-offset * 2, -0.6, 0]}
         url={'/video/section1/pt1/pt1-03.mp4'}
         scale={[1.5 * ASPECT, 1 * ASPECT, 1]}

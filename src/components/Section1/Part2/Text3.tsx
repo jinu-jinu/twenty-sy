@@ -1,7 +1,7 @@
 import { fillOpacityAni } from '@/utils/animation';
 import { Text, useGLTF, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const Text3 = () => {
@@ -14,18 +14,28 @@ const Text3 = () => {
     const scrollOffset = scroll.range(0.21 / 1, 0.01 / 1);
     const visible = scroll.visible(0.215 / 1, 0.015 / 1);
 
-    fillOpacityAni(text.current, scrollOffset);
+    if (text.current) fillOpacityAni(text.current, scrollOffset);
 
-    gsap.to(heartRef.current.scale, {
-      x: visible ? 0.15 : 0,
-      y: visible ? 0.15 : 0,
-      z: visible ? 0.15 : 0,
-      duration: 1,
-    });
+    if (heartRef.current)
+      gsap.to(heartRef.current.scale, {
+        x: visible ? 0.15 : 0,
+        y: visible ? 0.15 : 0,
+        z: visible ? 0.15 : 0,
+        duration: 1,
+      });
   });
 
+  useLayoutEffect(() => {
+    return () => {
+      if (heartRef.current) {
+        heartRef.current.geometry.dispose();
+        heartRef.current.material.dispose();
+      }
+    };
+  }, []);
+
   return (
-    <>
+    <group>
       <Text
         letterSpacing={0.02}
         lineHeight={1.2}
@@ -49,7 +59,7 @@ const Text3 = () => {
       >
         <primitive object={heart.scene} />
       </mesh>
-    </>
+    </group>
   );
 };
 

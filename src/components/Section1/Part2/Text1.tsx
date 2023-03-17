@@ -11,13 +11,14 @@ const Text1 = () => {
   useFrame(() => {
     const scrollOffset = scroll.range(0.13 / 1, 0.01 / 1);
 
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
-    });
+    if (group.current)
+      group.current.children.forEach(c => {
+        fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
+      });
   });
 
   return (
-    <group position={[0, 0, 0]} rotation={[0, 0, Math.PI * 0.5]} scale={1} ref={group}>
+    <group rotation={[0, 0, Math.PI * 0.5]} ref={group}>
       <Text
         font="/font/Prompt.ttf"
         position={[0, 0.15, 0]}

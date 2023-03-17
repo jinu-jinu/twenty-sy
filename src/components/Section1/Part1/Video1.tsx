@@ -4,7 +4,7 @@ import { fillOpacityAni, videoHandler } from '@/utils/animation';
 import { deviceOffset } from '@/utils/media';
 import { Text, useScroll, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Group } from 'three';
 
 const Video1 = () => {
@@ -13,19 +13,18 @@ const Video1 = () => {
   const group = useRef<Group>(null!);
   const video = useRef<any>();
   const ymd = useRef<any>();
-  const [isPlay, setIsPlay] = useState(false);
 
   useFrame(() => {
     const scrollOffset1 = scroll.range(0.042 / 1, 0.01 / 1);
     const scrollOffset2 = scroll.range(0.045 / 1, 0.01 / 1);
-    const visible = scroll.visible(0.045 / 1, 0.021 / 1);
 
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset1);
-    });
+    if (group.current)
+      group.current.children.forEach(c => {
+        fillOpacityAni<Text>(c as unknown as Text, scrollOffset1);
+      });
 
-    videoHandler(video.current, scrollOffset2, visible, setIsPlay);
-    fillOpacityAni(ymd.current, scrollOffset2);
+    if (video.current) videoHandler(video.current, scrollOffset2);
+    if (ymd.current) fillOpacityAni(ymd.current, scrollOffset2);
   });
 
   const texture = useTexture('./image/gradations/dusk.webp');
@@ -60,7 +59,6 @@ const Video1 = () => {
       <group>
         <Video
           ref={video}
-          isPlay={isPlay}
           pos={[offset * 2, 0, 0]}
           url={'/video/section1/pt1/pt1-02.mp4'}
           scale={[1.5 * ASPECT, 1 * ASPECT, 1]}
