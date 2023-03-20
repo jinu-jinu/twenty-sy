@@ -16,6 +16,7 @@ const Video = React.forwardRef(
       muted: true,
       loop: true,
       autoplay: true,
+      preload: 'auto',
     });
 
     return (
