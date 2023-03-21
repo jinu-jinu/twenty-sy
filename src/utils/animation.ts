@@ -15,17 +15,18 @@ export const fontSizeAni = <T extends gsap.TweenTarget>(
   });
 };
 
-export const upToDownAni = (target: any, offset: number, start: number): void => {
+export const posYAni = (target: any, y: number, duration: number = 1): void => {
   gsap.to(target.position, {
-    duration: 1,
-    y: start - offset * start,
+    duration,
+    y,
+    ease: 'power3.out',
   });
 };
 
-export const leftToRightAni = (target: any, offset: number, start: number): void => {
+export const posXAni = (target: any, x: number, duration: number = 1): void => {
   gsap.to(target.position, {
-    duration: 1,
-    x: start - offset * start,
+    duration,
+    x,
     ease: 'power3.out',
   });
 };
@@ -45,7 +46,6 @@ export const fillOpacityAni = <T extends gsap.TweenTarget>(
 export const opacityAni = <T extends gsap.TweenTarget>(
   target: T,
   offset: number,
-
   duration: number = 1
 ): void => {
   gsap.to(target, {

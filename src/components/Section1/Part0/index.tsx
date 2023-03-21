@@ -76,7 +76,7 @@ const Part0 = () => {
             transparent
             opacity={0}
             url={`/image/section1/pt0/pt0-05.webp`}
-            scale={[1 * 1.2, 1 * 1.2]}
+            scale={[1 * 1.2, 1.3 * 1.2]}
             position={[-0.6, -1.5, 1]}
           />
         </group>
