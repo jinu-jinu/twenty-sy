@@ -4,11 +4,14 @@ import { lazy, Suspense, useState } from 'react';
 import { state } from '../Store/store';
 import Part0 from './Part0';
 import Part1 from './Part1';
+import Part2 from './Part2';
+import Part3 from './Part3';
+import Part4 from './Part4';
 
-const LazyPart2 = lazy(() => import('./Part2'));
-const LazyPart3 = lazy(() => import('./Part3'));
-const LazyPart4 = lazy(() => import('./Part4'));
-const LazyPart5 = lazy(() => import('./Part5'));
+// const LazyPart2 = lazy(() => import('./Part2'));
+// const LazyPart3 = lazy(() => import('./Part3'));
+// const LazyPart4 = lazy(() => import('./Part4'));
+// const LazyPart5 = lazy(() => import('./Part5'));
 
 const Section1 = () => {
   const scroll = useScroll();
@@ -36,8 +39,11 @@ const Section1 = () => {
     <group>
       <Part0 />
       <Part1 />
+      {visiblePt2 && <Part2 />}
+      {visiblePt3 && <Part3 />}
+      {visiblePt4 && <Part4 />}
 
-      {visiblePt2 && (
+      {/* {visiblePt2 && (
         <Suspense fallback={null}>
           <LazyPart2 />
         </Suspense>
@@ -51,7 +57,7 @@ const Section1 = () => {
         <Suspense fallback={null}>
           <LazyPart4 />
         </Suspense>
-      )}
+      )} */}
       {/* {visiblePt5 && (
         <Suspense fallback={null}>
           <LazyPart5 />

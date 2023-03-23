@@ -25,42 +25,42 @@ const Image8 = () => {
         url={'/image/section1/pt3/pt3-32.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[-1, 1.3, 0]}
       />
       <Image
         url={'/image/section1/pt3/pt3-34.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[1, 1.3, 0]}
       />
       <Image
         url={'/image/section1/pt3/pt3-35.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[-1, 0, 0]}
       />
       <Image
         url={'/image/section1/pt3/pt3-36.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[1, 0, 0]}
       />
       <Image
         url={'/image/section1/pt3/pt3-37.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[-1, -1.3, 0]}
       />
       <Image
         url={'/image/section1/pt3/pt3-38.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[1, -1.3, 0]}
       />
     </group>

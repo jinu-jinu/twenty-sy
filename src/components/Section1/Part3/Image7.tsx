@@ -25,20 +25,20 @@ const Image7 = () => {
         url={'/image/section1/pt3/pt3-27.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[0, 1.1, 0]}
       />
       <Image
         url={'/image/section1/pt3/pt3-28.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
       />
       <Image
         url={'/image/section1/pt3/pt3-29.jpg'}
         scale={[1.75, 1]}
         transparent
-        opacity={1}
+        opacity={0}
         position={[0, -1.3, 0]}
       />
     </group>
