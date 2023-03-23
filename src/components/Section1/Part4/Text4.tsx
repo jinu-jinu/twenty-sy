@@ -33,7 +33,7 @@ const Text4 = () => {
         letterSpacing={0.02}
         font="/font/Prompt.ttf"
         fontSize={0}
-        fillOpacity={1}
+        fillOpacity={0}
         position={[-0.13, 0.1, 0]}
         anchorY={-0.05}
         color={'hotpink'}
@@ -45,7 +45,7 @@ const Text4 = () => {
         letterSpacing={0.02}
         font="/font/Gangwon.ttf"
         fontSize={0.1}
-        fillOpacity={1}
+        fillOpacity={0}
         anchorY={0}
         position={[0.28, 0.1, 0]}
         ref={text2}
@@ -56,7 +56,7 @@ const Text4 = () => {
         letterSpacing={0.02}
         font="/font/Prompt.ttf"
         fontSize={0}
-        fillOpacity={1}
+        fillOpacity={0}
         position={[-0.23, -0.1, 0]}
         anchorY={-0.05}
         color={'cornflowerblue'}
@@ -68,7 +68,7 @@ const Text4 = () => {
         letterSpacing={0.02}
         font="/font/Gangwon.ttf"
         fontSize={0.1}
-        fillOpacity={1}
+        fillOpacity={0}
         anchorY={0}
         position={[0.23, -0.1, 0]}
         ref={text4}

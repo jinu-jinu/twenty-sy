@@ -7,35 +7,18 @@ import { useRef } from 'react';
 
 const Video1 = () => {
   const scroll = useScroll();
-  const text = useRef<any>();
   const video = useRef<any>();
   const ymd = useRef<any>();
 
   useFrame(() => {
-    const scrollOffset1 = scroll.range(0.082 / 1, 0.01 / 1);
-    const scrollOffset2 = scroll.range(0.087 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.087 / 1, 0.01 / 1);
 
-    if (text.current) fillOpacityAni(text.current, scrollOffset1);
-    if (video.current) videoHandler(video.current, scrollOffset2);
-    if (ymd.current) fillOpacityAni(ymd.current, scrollOffset2);
+    if (video.current) videoHandler(video.current, scrollOffset);
+    if (ymd.current) fillOpacityAni(ymd.current, scrollOffset);
   });
 
   return (
-    <group position={[0, 0, -15]}>
-      <Text
-        anchorX={0.33}
-        font="./font/Gangwon.ttf"
-        fontSize={0.05}
-        position={[0, -0.3, 2.5]}
-        letterSpacing={0.05}
-        fillOpacity={0}
-        ref={text}
-        lineHeight={1.2}
-        maxWidth={0.7}
-      >
-        Dancing and singing in front of the camera, you were cool and beautiful!
-      </Text>
-
+    <group>
       <Video
         ref={video}
         pos={[0, 0.2, 0]}

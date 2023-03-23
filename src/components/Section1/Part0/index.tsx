@@ -44,19 +44,12 @@ const Part0 = () => {
         </group>
 
         <group ref={images}>
-          {/* <Image
-            transparent
-            opacity={0}
-            url={`/image/section1/pt0/pt0-01.webp`}
-            scale={[1 * 0.8, 1 * 0.8]}
-            position={[-0.5, 1.4, 1.5]}
-          /> */}
           <Image
             transparent
             opacity={0}
             url={`/image/section1/pt0/pt0-02.webp`}
             scale={[1 * 1, 1.25 * 1]}
-            position={[1.4, -0.5, -1]}
+            position={[1.3, -0.5, -1]}
           />
           <Image
             transparent

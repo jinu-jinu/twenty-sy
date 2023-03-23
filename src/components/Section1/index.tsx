@@ -42,16 +42,16 @@ const Section1 = () => {
           <LazyPart2 />
         </Suspense>
       )}
-      {/* {visiblePt3 && (
+      {visiblePt3 && (
         <Suspense fallback={null}>
           <LazyPart3 />
         </Suspense>
-      )} */}
-      {/* {visiblePt4 && (
+      )}
+      {visiblePt4 && (
         <Suspense fallback={null}>
           <LazyPart4 />
         </Suspense>
-      )} */}
+      )}
       {/* {visiblePt5 && (
         <Suspense fallback={null}>
           <LazyPart5 />

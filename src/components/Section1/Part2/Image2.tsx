@@ -12,7 +12,7 @@ const Image2 = () => {
     const scrollOffset = scroll.range(0.195 / 1, 0.01 / 1);
 
     if (group.current) {
-      posYAni(group.current, scrollOffset ? 0 : 0.5, 3);
+      posYAni(group.current, scrollOffset ? 0 : 1, 3);
 
       group.current.children.forEach(c => {
         const material = (c as Mesh).material;
@@ -22,7 +22,7 @@ const Image2 = () => {
   });
 
   return (
-    <group ref={group} position={[0, 0.5, 0]}>
+    <group ref={group} position={[0, 1, 0]}>
       <Image
         url={'/image/section1/pt2/pt2-08.jpg'}
         scale={[1.8, 1.8]}

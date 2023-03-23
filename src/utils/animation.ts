@@ -55,11 +55,6 @@ export const opacityAni = <T extends gsap.TweenTarget>(
   });
 };
 
-export const videoHandler = (
-  target: any,
-  offset: number,
-  visible?: boolean,
-  set?: (value: React.SetStateAction<boolean>) => void
-) => {
+export const videoHandler = (target: any, offset: number) => {
   opacityAni(target, offset);
 };

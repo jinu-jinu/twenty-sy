@@ -1,47 +1,35 @@
-import { useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useState } from 'react';
-import Text1 from './Text1';
-import Text2 from './Text2';
-import Text3 from './Text3';
+import MainTitle from './MainTitle';
+import SubTitle1 from './SubTitle1';
+import SubTitle2 from './SubTitle2';
+import SubTitle3 from './SubTitle3';
 import Video1 from './Video1';
 import Video2 from './Video2';
 import Image1 from './Image1';
 import Image2 from './Image2';
+import Image3 from './Image3';
+import ModelHeart from './ModelHeart';
 
 const Part2 = () => {
-  // const scroll = useScroll();
-  // const [visibleV1, setVisibleV1] = useState(false);
-  // const [visibleV2, setVisibleV2] = useState(false);
-  // const [visibleV3, setVisibleV3] = useState(false);
-  // const [visibleV4, setVisibleV4] = useState(false);
-
-  // useFrame(() => {
-  //   const triggerV1 = scroll.visible(0.14 / 1, 0.04 / 1);
-  //   const triggerV2 = scroll.visible(0.17 / 1, 0.03 / 1);
-  //   const triggerV3 = scroll.visible(0.19 / 1, 0.03 / 1);
-  //   const triggerV4 = scroll.visible(0.21 / 1, 0.03 / 1);
-
-  //   setVisibleV1(triggerV1);
-  //   setVisibleV2(triggerV2);
-  //   setVisibleV3(triggerV3);
-  //   setVisibleV4(triggerV4);
-  // });
-
   return (
     <group position={[0, 0, -36]}>
-      <Text1 />
+      <MainTitle />
       <Video1 />
-      <Image1 />
+
+      <group position={[0, 0, -11]}>
+        <SubTitle1 />
+        <Image1 />
+      </group>
 
       <group position={[0, 0, -16]}>
-        <Text2 />
+        <SubTitle2 />
         <Image2 />
       </group>
 
       <group position={[0, 0, -21]}>
-        <Text3 />
+        <SubTitle3 />
+        <ModelHeart />
         <Video2 />
+        <Image3 />
       </group>
     </group>
   );

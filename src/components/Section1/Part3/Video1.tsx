@@ -3,7 +3,7 @@ import { state } from '@/components/Store/store';
 import { videoHandler } from '@/utils/animation';
 import { useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useSnapshot } from 'valtio/react';
 
 const Video1 = () => {
@@ -21,7 +21,7 @@ const Video1 = () => {
     <>
       <Video
         ref={video}
-        url={'/video/section1/pt3/pt3-05.mp4'}
+        url={'/video/section1/pt3/pt3-01.mp4'}
         scale={[...aspect]}
         pos={[0, 0, -6]}
       />

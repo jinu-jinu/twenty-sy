@@ -9,69 +9,52 @@ const Image1 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset2 = scroll.range(0.383 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.296 / 1, 0.01 / 1);
 
-    group.current.children.forEach(c => {
-      const material = (c as Mesh).material;
-      opacityAni<typeof material>(material, scrollOffset2);
-    });
+    if (group.current) {
+      group.current.children.forEach(c => {
+        const material = (c as Mesh).material;
+        opacityAni(material, scrollOffset, 3);
+      });
+    }
   });
 
   return (
-    <group ref={group}>
+    <group ref={group} scale={0.5}>
       <Image
-        url={`/image/section1/pt3/pt3-01.webp`}
-        transparent
-        opacity={0}
-        position={[-0.55, 1.8, 0]}
+        url={'/image/section1/pt3/pt3-01.jpg'}
         scale={[1, 1.3]}
+        transparent
+        opacity={1}
+        position={[1.5, -0.6, 0]}
       />
       <Image
-        url={`/image/section1/pt3/pt3-02.webp`}
+        url={'/image/section1/pt3/pt3-02.jpg'}
+        scale={[1, 1.2]}
         transparent
-        opacity={0}
-        position={[-0.55, 0.5, 0]}
-      />
-
-      <Image
-        url={`/image/section1/pt3/pt3-04.webp`}
-        transparent
-        opacity={0}
-        position={[0.55, 0.65, 0]}
-        scale={[1, 1.3]}
+        opacity={1}
+        position={[0.1, -1.4, 0]}
       />
       <Image
-        url={`/image/section1/pt3/pt3-03.webp`}
+        url={'/image/section1/pt3/pt3-03.jpg'}
+        scale={[1.75 * 0.8, 1 * 0.8]}
         transparent
-        opacity={0}
-        position={[0.55, 1.95, 0]}
-      />
-
-      <Image
-        url={`/image/section1/pt3/pt3-05.webp`}
-        transparent
-        opacity={0}
-        position={[-0.55, -1.95, 0]}
-        scale={[1, 1.3]}
+        opacity={1}
+        position={[-1.4, -1.1, 0]}
       />
       <Image
-        url={`/image/section1/pt3/pt3-09.webp`}
+        url={'/image/section1/pt3/pt3-04.jpg'}
+        scale={[1.75, 1]}
         transparent
-        opacity={0}
-        position={[-0.55, -0.65, 0]}
+        opacity={1}
+        position={[-0.3, 0.1, 0]}
       />
       <Image
-        url={`/image/section1/pt3/pt3-07.webp`}
+        url={'/image/section1/pt3/pt3-05.jpg'}
+        scale={[1.75 * 0.8, 1 * 0.8]}
         transparent
-        opacity={0}
-        position={[0.55, -0.8, 0]}
-        scale={[1, 1.3]}
-      />
-      <Image
-        url={`/image/section1/pt3/pt3-08.webp`}
-        transparent
-        opacity={0}
-        position={[0.55, -2.1, 0]}
+        opacity={1}
+        position={[1.5, 0.8, 0]}
       />
     </group>
   );
