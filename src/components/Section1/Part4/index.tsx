@@ -14,8 +14,8 @@ const Part4 = () => {
     <>
       <group position={[0, 0, -104]}>
         <Text1 />
-        {/* <Video1 />
-        <Video2 /> */}
+        <Video1 />
+        {/* <Video2 /> */}
 
         {/* <group position={[0, 0, -16]}>
           <Text2 />
