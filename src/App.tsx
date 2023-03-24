@@ -1,7 +1,7 @@
 import { GlobalStyle } from './globalStyle';
 import { Canvas } from '@react-three/fiber';
 import { ScrollControls, Sparkles } from '@react-three/drei';
-import Project from './components/Section';
+import Project from './components/Project';
 import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
 

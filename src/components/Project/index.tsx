@@ -1,9 +1,9 @@
-import Part0 from '../Section1/Part0';
+import Section1 from './Section1';
 
 const Project = () => {
   return (
     <group>
-      <Part0 />
+      <Section1 />
     </group>
   );
 };

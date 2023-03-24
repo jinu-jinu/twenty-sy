@@ -4,7 +4,7 @@ import { useLayoutEffect, useRef } from 'react';
 import { Mesh } from 'three';
 import { fillOpacityAni, opacityAni } from '@/utils/animation';
 
-const Part0 = () => {
+const Section1 = () => {
   const offset = deviceOffset();
   const texts = useRef<any>();
   const images = useRef<any>();
@@ -79,7 +79,7 @@ const Part0 = () => {
           opacity={0}
           url={`/image/section1/pt0/pt0-05.webp`}
           scale={[1 * 1.4, 1.5 * 1.4]}
-          position={[3.2, 3, -1.5]}
+          position={[3.5, 3, -1.5]}
         />
         <Image
           transparent
@@ -127,15 +127,15 @@ const Part0 = () => {
           transparent
           opacity={0}
           url={`/image/section1/pt0/pt0-12.webp`}
-          scale={[1 * 1.4, 1.25 * 1.4]}
+          scale={[1 * 1.3, 1.25 * 1.3]}
           position={[7.8, 3.3, -1]}
         />
         <Image
           transparent
           opacity={0}
           url={`/image/section1/pt0/pt0-13.webp`}
-          scale={[1 * 1.3, 1.25 * 1.3]}
-          position={[5.2, 1, -0.5]}
+          scale={[1 * 1.2, 1.25 * 1.2]}
+          position={[5.3, 1, -0.5]}
         />
         <Image
           transparent
@@ -149,4 +149,4 @@ const Part0 = () => {
   );
 };
 
-export default Part0;
+export default Section1;

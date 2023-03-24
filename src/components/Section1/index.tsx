@@ -2,7 +2,7 @@ import { useAspect, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { lazy, Suspense, useState } from 'react';
 import { state } from '../Store/store';
-import Part0 from './Part0';
+import Part0 from '../Project/Section1';
 import Part1 from './Part1';
 import Part2 from './Part2';
 import Part3 from './Part3';
