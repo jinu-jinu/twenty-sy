@@ -10,7 +10,7 @@ const SubTitle1 = () => {
   const texture = useTexture('./image/gradations/dusk.webp');
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.042 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.06 / 1, 0.012 / 1);
 
     if (group.current)
       group.current.children.forEach(c => {

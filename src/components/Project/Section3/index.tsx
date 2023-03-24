@@ -12,7 +12,7 @@ import { useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useState } from 'react';
 
-const Part2 = () => {
+const Section3 = () => {
   const scroll = useScroll();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -45,4 +45,4 @@ const Part2 = () => {
   );
 };
 
-export default Part2;
+export default Section3;

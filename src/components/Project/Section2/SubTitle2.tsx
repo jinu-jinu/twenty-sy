@@ -3,30 +3,28 @@ import { Text, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 
-const SubTitle4 = () => {
+const SubTitle2 = () => {
   const scroll = useScroll();
   const text = useRef<any>();
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.102 / 1, 0.01 / 1);
-
+    const scrollOffset = scroll.range(0.095 / 1, 0.01 / 1);
     if (text.current) fillOpacityAni(text.current, scrollOffset);
   });
-
   return (
     <Text
+      anchorX={0.55}
       font="./font/Gangwon.ttf"
-      fontSize={0.06}
-      position={[0, 0, 3]}
-      lineHeight={1.2}
+      fontSize={0.1}
+      position={[0, 0.3, 1]}
       letterSpacing={0.05}
-      ref={text}
       fillOpacity={0}
-      maxWidth={0.8}
+      ref={text}
+      maxWidth={1.4}
     >
-      Your passion and effort toward your dream are beautiful and admirable.
+      I first saw you on the night of the full moon.
     </Text>
   );
 };
 
-export default SubTitle4;
+export default SubTitle2;

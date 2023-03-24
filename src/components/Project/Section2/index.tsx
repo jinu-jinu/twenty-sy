@@ -9,9 +9,9 @@ import SubTitle3 from './SubTitle3';
 import SubTitle4 from './SubTitle4';
 import ModelMoon from './ModelMoon';
 
-const Part1 = () => {
+const Section2 = () => {
   return (
-    <group position={[0, 0, -11]}>
+    <group position={[0, 0, -10]}>
       <MainTitle />
 
       <group position={[0, 0, -5]}>
@@ -38,4 +38,4 @@ const Part1 = () => {
   );
 };
 
-export default Part1;
+export default Section2;

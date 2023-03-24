@@ -9,7 +9,7 @@ const ModelMoon = () => {
   const moonRef = useRef<any>();
 
   useFrame(() => {
-    const visible = scroll.visible(0.067 / 1, 0.02 / 1);
+    const visible = scroll.visible(0.1 / 1, 0.02 / 1);
 
     if (moonRef.current)
       gsap.to(moonRef.current.scale, {

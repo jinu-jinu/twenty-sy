@@ -1,5 +1,5 @@
-import { fillOpacityAni, opacityAni } from '@/utils/animation';
-import { Image, Text, useGLTF, useScroll } from '@react-three/drei';
+import { opacityAni } from '@/utils/animation';
+import { Image, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Group, Mesh } from 'three';
@@ -9,7 +9,7 @@ const Image2 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.067 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.1 / 1, 0.01 / 1);
 
     if (group.current)
       group.current.children.forEach(c => {

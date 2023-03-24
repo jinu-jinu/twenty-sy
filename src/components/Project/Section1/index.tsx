@@ -79,7 +79,7 @@ const Section1 = () => {
           opacity={0}
           url={`/image/section1/pt0/pt0-05.webp`}
           scale={[1 * 1.4, 1.5 * 1.4]}
-          position={[3.5, 3, -1.5]}
+          position={[3.6, 3, -1.5]}
         />
         <Image
           transparent
