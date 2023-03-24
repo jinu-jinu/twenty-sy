@@ -39,9 +39,9 @@ const Section1 = () => {
     <group>
       <Part0 />
       <Part1 />
-      {/* {visiblePt2 && <Part2 />}
+      {visiblePt2 && <Part2 />}
       {visiblePt3 && <Part3 />}
-      {visiblePt4 && <Part4 />} */}
+      {visiblePt4 && <Part4 />}
 
       {/* {visiblePt2 && (
         <Suspense fallback={null}>

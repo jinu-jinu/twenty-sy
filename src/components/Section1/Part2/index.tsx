@@ -8,8 +8,18 @@ import Image1 from './Image1';
 import Image2 from './Image2';
 import Image3 from './Image3';
 import ModelHeart from './ModelHeart';
+import { useScroll } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { useState } from 'react';
 
 const Part2 = () => {
+  const scroll = useScroll();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useFrame(() => {
+    const scrollOffset = scroll.range(0.19 / 1, 0.01 / 1);
+  });
+
   return (
     <group position={[0, 0, -36]}>
       <MainTitle />

@@ -20,12 +20,12 @@ const CameraControl = () => {
     state.camera.position.copy(pos);
     state.camera.lookAt(pos2);
 
-    console.log(scroll.offset);
+    console.log(scroll.offset, state.camera.position.z);
   });
 
   const pipeSpline = new THREE.CatmullRomCurve3([
     new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0, 0, -250),
+    new THREE.Vector3(0, 0, -160),
   ]);
 
   return (
