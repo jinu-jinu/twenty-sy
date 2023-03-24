@@ -17,13 +17,24 @@ import Typo5 from './Typo5';
 import Typo6 from './Typo6';
 import Typo7 from './Typo7';
 import Typo8 from './Typo8';
+import { useScroll } from '@react-three/drei';
+import { useState } from 'react';
+import { useFrame } from '@react-three/fiber';
 
 const Section4 = () => {
+  const scroll = useScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+
+  useFrame(() => {
+    const trigger1 = scroll.visible(0.335 / 1, 0.06 / 1);
+
+    setIsVisible1(trigger1);
+  });
   return (
     <>
       <group position={[0, 0, -56]}>
         <MainTitle />
-        <Video1 />
+        {isVisible1 && <Video1 />}
 
         <group position={[0, 0, -6]}>
           <SubTitle1 />

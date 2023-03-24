@@ -14,16 +14,21 @@ import { useState } from 'react';
 
 const Section3 = () => {
   const scroll = useScroll();
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [isVisible2, setIsVisible2] = useState(false);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.19 / 1, 0.01 / 1);
+    const trigger1 = scroll.visible(0.185 / 1, 0.05 / 1);
+    const trigger2 = scroll.visible(0.305 / 1, 0.045 / 1);
+
+    setIsVisible1(trigger1);
+    setIsVisible2(trigger2);
   });
 
   return (
     <group position={[0, 0, -33]}>
       <MainTitle />
-      <Video1 />
+      {isVisible1 && <Video1 />}
 
       <group position={[0, 0, -9]}>
         <SubTitle1 />
@@ -38,7 +43,7 @@ const Section3 = () => {
       <group position={[0, 0, -20]}>
         <SubTitle3 />
         <ModelHeart />
-        <Video2 />
+        {isVisible2 && <Video2 />}
         <Image3 />
       </group>
     </group>

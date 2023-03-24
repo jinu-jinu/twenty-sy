@@ -8,8 +8,20 @@ import SubTitle2 from './SubTitle2';
 import SubTitle3 from './SubTitle3';
 import SubTitle4 from './SubTitle4';
 import ModelMoon from './ModelMoon';
+import { useScroll } from '@react-three/drei';
+import { useState } from 'react';
+import { useFrame } from '@react-three/fiber';
 
 const Section2 = () => {
+  const scroll = useScroll();
+  const [isVisible1, setIsVisible1] = useState(false);
+
+  useFrame(() => {
+    const trigger1 = scroll.visible(0.12 / 1, 0.05 / 1);
+
+    setIsVisible1(trigger1);
+  });
+
   return (
     <group position={[0, 0, -10]}>
       <MainTitle />
@@ -27,7 +39,7 @@ const Section2 = () => {
 
       <group position={[0, 0, -15]}>
         <SubTitle3 />
-        <Video1 />
+        {isVisible1 && <Video1 />}
       </group>
 
       <group position={[0, 0, -20]}>
