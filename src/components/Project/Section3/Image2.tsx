@@ -9,7 +9,7 @@ const Image2 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.195 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.28 / 1, 0.01 / 1);
 
     if (group.current) {
       posYAni(group.current, scrollOffset ? 0 : 1, 3);
@@ -25,44 +25,37 @@ const Image2 = () => {
     <group ref={group} position={[0, 1, 0]}>
       <Image
         url={'/image/section1/pt2/pt2-08.jpg'}
-        scale={[1.8, 1.8]}
+        scale={[1.7, 1]}
         transparent
         opacity={0}
-        position={[-1.9, 1.1, 0]}
+        position={[-1.9, 0, 0]}
       />
       <Image
-        url={'/image/section1/pt2/pt2-09.jpg'}
-        scale={[1.8, 1]}
+        url={'/image/section1/pt2/pt2-11.jpg'}
+        scale={[1.7, 1]}
         transparent
         opacity={0}
       />
       <Image
         url={'/image/section1/pt2/pt2-10.jpg'}
-        scale={[1.8, 1]}
+        scale={[1.7, 1]}
         transparent
         opacity={0}
-        position={[0, 1.1, 0]}
+        position={[0, 1.2, 0]}
       />
       <Image
-        url={'/image/section1/pt2/pt2-11.jpg'}
-        scale={[1.8, 1]}
+        url={'/image/section1/pt2/pt2-09.jpg'}
+        scale={[1.7, 1]}
         transparent
         opacity={0}
-        position={[1.9, 0.1, 0]}
-      />
-      <Image
-        url={'/image/section1/pt2/pt2-12.jpg'}
-        scale={[1.8, 1]}
-        transparent
-        opacity={0}
-        position={[-1.9, -0.4, 0]}
+        position={[1.9, 0, 0]}
       />
       <Image
         url={'/image/section1/pt2/pt2-13.jpg'}
-        scale={[1.8, 1]}
+        scale={[1.7, 1]}
         transparent
         opacity={0}
-        position={[0, -1.1, 0]}
+        position={[0, -1.2, 0]}
       />
     </group>
   );

@@ -10,7 +10,7 @@ const Video2 = () => {
   const ymd = useRef<any>();
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.218 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.318 / 1, 0.01 / 1);
 
     if (video.current) videoHandler(video.current, scrollOffset);
     if (ymd.current) fillOpacityAni(ymd.current, scrollOffset);

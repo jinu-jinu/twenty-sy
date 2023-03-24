@@ -9,7 +9,7 @@ const ModelHeart = () => {
   const heart = useGLTF('/model/heart.glb');
 
   useFrame(() => {
-    const visible = scroll.visible(0.215 / 1, 0.015 / 1);
+    const visible = scroll.visible(0.313 / 1, 0.015 / 1);
 
     if (heartRef.current)
       gsap.to(heartRef.current.scale, {
@@ -32,7 +32,7 @@ const ModelHeart = () => {
   return (
     <mesh
       scale={0}
-      position={[0.25, -0.4, 2.4]}
+      position={[0.1, -0.4, 2.4]}
       rotation={[0, 0, Math.PI * -0.1]}
       ref={heartRef}
     >

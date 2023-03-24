@@ -8,7 +8,7 @@ const SubTitle3 = () => {
   const text = useRef<any>();
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.21 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.308 / 1, 0.01 / 1);
 
     if (text.current) fillOpacityAni(text.current, scrollOffset);
   });

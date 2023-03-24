@@ -21,21 +21,21 @@ const Section3 = () => {
   });
 
   return (
-    <group position={[0, 0, -36]}>
+    <group position={[0, 0, -33]}>
       <MainTitle />
       <Video1 />
 
-      <group position={[0, 0, -11]}>
+      <group position={[0, 0, -9]}>
         <SubTitle1 />
         <Image1 />
       </group>
 
-      <group position={[0, 0, -16]}>
+      <group position={[0, 0, -15]}>
         <SubTitle2 />
         <Image2 />
       </group>
 
-      <group position={[0, 0, -21]}>
+      <group position={[0, 0, -20]}>
         <SubTitle3 />
         <ModelHeart />
         <Video2 />

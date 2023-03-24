@@ -15,7 +15,7 @@ const SubTitle1 = () => {
   `;
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.17 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.23 / 1, 0.01 / 1);
 
     if (group.current)
       group.current.children.forEach(c => {
@@ -24,7 +24,7 @@ const SubTitle1 = () => {
   });
 
   return (
-    <group position={[0, 0, 2.5]} ref={group}>
+    <group position={[0, 0, 3.5]} ref={group}>
       <Text
         font="./font/Gangwon.ttf"
         position={[0, 0.1, 0]}

@@ -9,7 +9,7 @@ const SubTitle2 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.19 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.273 / 1, 0.01 / 1);
 
     if (group.current)
       group.current.children.forEach(c => {
