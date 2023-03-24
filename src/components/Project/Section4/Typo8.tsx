@@ -9,7 +9,7 @@ const Typo8 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.387 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.586 / 1, 0.015 / 1);
 
     group.current.children.forEach(c => {
       fillOpacityAni<Text>(c as unknown as Text, scrollOffset);

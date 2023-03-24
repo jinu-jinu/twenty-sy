@@ -4,12 +4,12 @@ import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Group, Mesh } from 'three';
 
-const Image2 = () => {
+const Image3 = () => {
   const scroll = useScroll();
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.316 / 1, 0.002 / 1);
+    const scrollOffset = scroll.range(0.458 / 1, 0.015 / 1);
 
     if (group.current) {
       group.current.children.forEach(c => {
@@ -22,30 +22,28 @@ const Image2 = () => {
   return (
     <group ref={group} scale={0.5}>
       <Image
-        url={'/image/section1/pt3/pt3-06.jpg'}
+        url={'/image/section1/pt3/pt3-09.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[-0.2, -0.55, 0]}
+      />
+      <Image
+        url={'/image/section1/pt3/pt3-10.jpg'}
         scale={[1, 1.25]}
         transparent
         opacity={0}
-        position={[0.6, 1.3, -0.5]}
+        position={[0.9, 0.7, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-07.jpg'}
-        scale={[1, 1]}
+        url={'/image/section1/pt3/pt3-11.jpg'}
+        scale={[1.4 * 0.8, 1 * 0.8]}
         transparent
         opacity={0}
-        position={[-0.7, 1.6, 0]}
-        rotation={[0, 0, Math.PI * 0.1]}
-      />
-      <Image
-        url={'/image/section1/pt3/pt3-08.jpg'}
-        scale={[1, 1.25]}
-        transparent
-        opacity={0}
-        position={[1.8, 0.4, -0.2]}
-        rotation={[0, 0, Math.PI * -0.1]}
+        position={[-0.4, 0.8, -0.5]}
       />
     </group>
   );
 };
 
-export default Image2;
+export default Image3;

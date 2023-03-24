@@ -4,12 +4,12 @@ import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Group, Mesh } from 'three';
 
-const Image1 = () => {
+const Image6 = () => {
   const scroll = useScroll();
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.296 / 1, 0.01 / 1);
+    const scrollOffset = scroll.curve(0.538 / 1, 0.032 / 1);
 
     if (group.current) {
       group.current.children.forEach(c => {
@@ -20,44 +20,51 @@ const Image1 = () => {
   });
 
   return (
-    <group ref={group} scale={0.5}>
+    <group ref={group} scale={0.6}>
       <Image
-        url={'/image/section1/pt3/pt3-01.jpg'}
-        scale={[1, 1.3]}
+        url={'/image/section1/pt3/pt3-20.jpg'}
+        scale={[1.75, 1]}
+        position={[0.95, 0, 0]}
         transparent
         opacity={0}
-        position={[1.5, -0.6, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-02.jpg'}
-        scale={[1, 1.2]}
-        transparent
-        opacity={0}
-        position={[0.1, -1.4, 0]}
-      />
-      <Image
-        url={'/image/section1/pt3/pt3-03.jpg'}
-        scale={[1.75 * 0.8, 1 * 0.8]}
-        transparent
-        opacity={0}
-        position={[-1.4, -1.1, 0]}
-      />
-      <Image
-        url={'/image/section1/pt3/pt3-04.jpg'}
+        url={'/image/section1/pt3/pt3-22.jpg'}
         scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[-0.3, 0.1, 0]}
+        position={[-0.95, 1.1, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-05.jpg'}
-        scale={[1.75 * 0.8, 1 * 0.8]}
+        url={'/image/section1/pt3/pt3-23.jpg'}
+        scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[1.5, 0.8, 0]}
+        position={[0.95, 1.1, 0]}
+      />
+      <Image
+        url={'/image/section1/pt3/pt3-24.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[-0.95, 0, 0]}
+      />
+      <Image
+        url={'/image/section1/pt3/pt3-25.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[-0.95, -1.1, 0]}
+      />
+      <Image
+        url={'/image/section1/pt3/pt3-26.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[0.95, -1.1, 0]}
       />
     </group>
   );
 };
 
-export default Image1;
+export default Image6;

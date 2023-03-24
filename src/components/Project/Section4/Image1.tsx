@@ -4,12 +4,12 @@ import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Group, Mesh } from 'three';
 
-const Image5 = () => {
+const Image1 = () => {
   const scroll = useScroll();
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.356 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.397 / 1, 0.015 / 1);
 
     if (group.current) {
       group.current.children.forEach(c => {
@@ -22,42 +22,42 @@ const Image5 = () => {
   return (
     <group ref={group} scale={0.5}>
       <Image
-        url={'/image/section1/pt3/pt3-15.jpg'}
-        scale={[1 * 0.8, 1 * 0.8]}
+        url={'/image/section1/pt3/pt3-01.jpg'}
+        scale={[1, 1.3]}
         transparent
         opacity={0}
-        position={[-0.7, 1.2, 0]}
+        position={[1.6, -0.6, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-16.jpg'}
-        scale={[1.25 * 0.9, 1 * 0.9]}
+        url={'/image/section1/pt3/pt3-02.jpg'}
+        scale={[1, 1.2]}
         transparent
         opacity={0}
-        position={[0.7, 0.7, 0]}
+        position={[0.2, -1.6, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-17.jpg'}
+        url={'/image/section1/pt3/pt3-03.jpg'}
+        scale={[1.75 * 0.8, 1 * 0.8]}
+        transparent
+        opacity={0}
+        position={[-1.5, -1.4, 0]}
+      />
+      <Image
+        url={'/image/section1/pt3/pt3-04.jpg'}
         scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[-1, 0, 0]}
+        position={[-0.6, 0.1, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-18.jpg'}
-        scale={[1.4, 1]}
+        url={'/image/section1/pt3/pt3-05.jpg'}
+        scale={[1.75 * 0.8, 1 * 0.8]}
         transparent
         opacity={0}
-        position={[1, -0.5, 0]}
-      />
-      <Image
-        url={'/image/section1/pt3/pt3-19.jpg'}
-        scale={[1 * 0.9, 1 * 0.9]}
-        transparent
-        opacity={0}
-        position={[-0.4, -1.2, 0]}
+        position={[1.6, 0.9, 0]}
       />
     </group>
   );
 };
 
-export default Image5;
+export default Image1;

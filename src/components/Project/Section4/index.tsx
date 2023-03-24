@@ -18,61 +18,59 @@ import Typo6 from './Typo6';
 import Typo7 from './Typo7';
 import Typo8 from './Typo8';
 
-const Part3 = () => {
+const Section4 = () => {
   return (
     <>
-      <group position={[0, 0, -63]}>
+      <group position={[0, 0, -56]}>
         <MainTitle />
         <Video1 />
 
-        <group position={[0, 0, -11]}>
+        <group position={[0, 0, -6]}>
           <SubTitle1 />
         </group>
 
-        <group position={[0, 0.15, -13]}>
+        <group position={[0, 0.15, -10]}>
           <Typo1 />
           <Image1 />
         </group>
 
-        <group position={[-0.6, 0.3, -17]}>
+        <group position={[0, -0.15, -15]}>
           <Typo2 />
           <Image2 />
         </group>
 
-        <group position={[0.6, -0.3, -21]}>
+        <group position={[0, -0.3, -19]}>
           <Typo3 />
           <Image3 />
         </group>
 
-        <group position={[-0.6, 0.3, -24]}>
+        <group position={[0, 0.2, -23]}>
           <Typo4 />
           <Image4 />
         </group>
 
-        <group position={[0, 0, -27]}>
+        <group position={[0, -0.2, -27]}>
           <Typo5 />
           <Image5 />
         </group>
 
+        <group position={[0, -0.15, -32]}>
+          <Typo6 />
+          <Image6 />
+        </group>
+
         <group position={[0, 0, -35]}>
-          <group position={[-1.1, 0, 4.5]}>
-            <Typo6 />
-            <Image6 />
-          </group>
+          <Typo7 />
+          <Image7 />
+        </group>
 
-          <group position={[0.7, 0, 2.5]}>
-            <Typo7 />
-            <Image7 />
-          </group>
-
-          <group position={[0, 0.05, 0]}>
-            <Typo8 />
-            <Image8 />
-          </group>
+        <group position={[0, 0, -39]}>
+          <Typo8 />
+          <Image8 />
         </group>
       </group>
     </>
   );
 };
 
-export default Part3;
+export default Section4;

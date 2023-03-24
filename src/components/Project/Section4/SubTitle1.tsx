@@ -10,7 +10,7 @@ const SubTitle1 = () => {
   const texture = useTexture('./image/gradations/summer.webp');
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.284 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.383 / 1, 0.01 / 1);
 
     group.current.children.forEach(c => {
       fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
@@ -18,7 +18,7 @@ const SubTitle1 = () => {
   });
 
   return (
-    <group rotation={[0, 0, Math.PI * 0.5]} position={[0, 0, 2.5]} ref={group}>
+    <group rotation={[0, 0, Math.PI * 0.5]} ref={group}>
       <Text
         anchorX={0.1}
         font="./font/Gangwon.ttf"

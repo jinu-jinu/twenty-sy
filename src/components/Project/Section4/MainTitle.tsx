@@ -9,7 +9,7 @@ const MainTitle = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.245 / 1, 0.01 / 1);
+    const scrollOffset = scroll.range(0.342 / 1, 0.01 / 1);
 
     group.current.children.forEach(c => {
       fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
@@ -17,7 +17,7 @@ const MainTitle = () => {
   });
 
   return (
-    <group position={[0, 0, 0]} scale={1} ref={group}>
+    <group ref={group}>
       <Text
         font="/font/Prompt.ttf"
         position={[0, 0.15, 0]}

@@ -12,7 +12,7 @@ const Video1 = () => {
   const { aspect } = useSnapshot(state);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.255 / 1, 0.01 / 1);
+    const scrollOffset = scroll.curve(0.345 / 1, 0.04 / 1);
 
     videoHandler(video.current, scrollOffset);
   });
@@ -23,7 +23,7 @@ const Video1 = () => {
         ref={video}
         url={'/video/section1/pt3/pt3-01.mp4'}
         scale={[...aspect]}
-        pos={[0, 0, -6]}
+        pos={[0, 0, -5]}
       />
     </>
   );

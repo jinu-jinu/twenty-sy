@@ -14,8 +14,6 @@ const Part1 = () => {
   const [trigger2, setTrigger2] = useState(true);
   const [trigger3, setTrigger3] = useState(true);
 
-  // NOW NEW NEXT 2023 TWENTY
-
   useFrame(() => {
     const visible1 = scroll.visible(0.685 / 1, 0.01 / 1);
     const visible2 = scroll.visible(0.705 / 1, 0.01 / 1);

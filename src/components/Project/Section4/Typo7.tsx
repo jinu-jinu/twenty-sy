@@ -8,7 +8,7 @@ const Typo7 = () => {
   const text = useRef<any>();
 
   useFrame(() => {
-    const scrollOffset = scroll.curve(0.382 / 1, 0.012 / 1);
+    const scrollOffset = scroll.curve(0.568 / 1, 0.02 / 1);
 
     if (text.current) {
       fillOpacityAni(text.current, scrollOffset);
