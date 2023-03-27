@@ -16,28 +16,8 @@ import Typo4 from './Typo4';
 import Typo5 from './Typo5';
 import Typo6 from './Typo6';
 import Typo7 from './Typo7';
-import { useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useState } from 'react';
 
 const Section4 = () => {
-  const scroll = useScroll();
-
-  const [visible1, setVisible1] = useState(false);
-
-  useFrame(() => {
-    const trigger1 = scroll.visible(0.3 / 1, 0.35 / 1);
-
-    setVisible1(trigger1);
-  });
-
-  if (!visible1)
-    return (
-      <mesh>
-        <boxGeometry />
-      </mesh>
-    );
-
   return (
     <>
       <group position={[0, 0, -56]}>
