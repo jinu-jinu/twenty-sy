@@ -1,6 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useMemo } from 'react';
 import * as THREE from 'three';
-import { useVideoTexture } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 
 type VideoProps = {
   url: string;
@@ -8,15 +8,27 @@ type VideoProps = {
   pos?: [number, number, number];
   rotation?: [number, number, number];
   opacity?: number;
+  isPlay?: boolean;
 };
 
 const Video = React.forwardRef(
-  ({ url, pos, scale, rotation, opacity = 0 }: VideoProps, ref) => {
-    const texture = useVideoTexture(url, {
-      muted: true,
-      loop: true,
-      autoplay: true,
-      preload: 'auto',
+  ({ url, pos, scale, rotation, opacity = 0, isPlay = false }: VideoProps, ref) => {
+    const video = useMemo(() => {
+      const res = document.createElement('video');
+      res.loop = true;
+      res.muted = true;
+      res.autoplay = true;
+      res.playsInline = true;
+      res.src = url;
+
+      return res;
+    }, []);
+
+    const texture = new THREE.VideoTexture(video);
+
+    useFrame(() => {
+      if (isPlay) video.play();
+      else video.pause();
     });
 
     return (
