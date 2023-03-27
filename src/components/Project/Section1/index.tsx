@@ -3,6 +3,7 @@ import { Image, Text } from '@react-three/drei';
 import { useLayoutEffect, useRef } from 'react';
 import { Mesh } from 'three';
 import { fillOpacityAni, opacityAni } from '@/utils/animation';
+import { PROMPT_B, PROMPT_R } from '@/components/common/constant';
 
 const Section1 = () => {
   const offset = deviceOffset();
@@ -25,7 +26,7 @@ const Section1 = () => {
     <group position={[0, 0, -5]}>
       <group ref={texts} scale={1 + offset * 3}>
         <Text
-          font={'/font/Prompt.ttf'}
+          font={PROMPT_B}
           fillOpacity={0}
           position={[0, 0.15, 0]}
           letterSpacing={0.04}
@@ -34,14 +35,14 @@ const Section1 = () => {
           THE MOMENTS
         </Text>
         <Text
-          font={'/font/NotoSansKR.otf'}
+          font={PROMPT_R}
           fillOpacity={0}
-          position={[0, -0.2, 0]}
+          position={[0, -0.1, 0]}
           letterSpacing={0.02}
-          fontSize={0.15}
+          fontSize={0.12}
           color={'#fff'}
         >
-          함께라 더 빛났던 순간
+          from 2021 to 2022
         </Text>
       </group>
 

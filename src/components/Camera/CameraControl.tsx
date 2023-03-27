@@ -25,7 +25,7 @@ const CameraControl = () => {
 
   const pipeSpline = new THREE.CatmullRomCurve3([
     new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0, 0, -160),
+    new THREE.Vector3(0, 0, -150),
   ]);
 
   return (

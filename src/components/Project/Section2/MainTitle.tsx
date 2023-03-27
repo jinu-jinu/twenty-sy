@@ -1,24 +1,9 @@
-import { fillOpacityAni } from '@/utils/animation';
-import { Text, useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { Group } from 'three';
+import { Text } from '@react-three/drei';
+import { ForwardedRef, forwardRef } from 'react';
 
-const MainTitle = () => {
-  const scroll = useScroll();
-  const group = useRef<Group>(null!);
-
-  useFrame(() => {
-    const scrollOffset = scroll.range(0.03 / 1, 0.02 / 1);
-
-    if (group.current)
-      group.current.children.forEach(c => {
-        fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
-      });
-  });
-
+const MainTitle = forwardRef((props, mainTitle: any) => {
   return (
-    <group ref={group}>
+    <group ref={mainTitle}>
       <Text fillOpacity={0} font="/font/Prompt.ttf" position={[0, 0.1, 0]} fontSize={0.1}>
         MOMENT#1
       </Text>
@@ -32,6 +17,6 @@ const MainTitle = () => {
       </Text>
     </group>
   );
-};
+});
 
 export default MainTitle;

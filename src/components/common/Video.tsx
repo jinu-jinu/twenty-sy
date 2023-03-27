@@ -1,6 +1,5 @@
-import React, { Suspense, useMemo } from 'react';
+import React, { ForwardedRef, Suspense, useEffect, useMemo } from 'react';
 import * as THREE from 'three';
-import { useFrame } from '@react-three/fiber';
 
 type VideoProps = {
   url: string;
@@ -12,7 +11,10 @@ type VideoProps = {
 };
 
 const Video = React.forwardRef(
-  ({ url, pos, scale, rotation, opacity = 0, isPlay = false }: VideoProps, ref) => {
+  (
+    { url, pos, scale, rotation, opacity = 0, isPlay = false }: VideoProps,
+    ref: ForwardedRef<any>
+  ) => {
     const video = useMemo(() => {
       const res = document.createElement('video');
       res.loop = true;
@@ -26,10 +28,10 @@ const Video = React.forwardRef(
 
     const texture = new THREE.VideoTexture(video);
 
-    useFrame(() => {
+    useEffect(() => {
       if (isPlay) video.play();
       else video.pause();
-    });
+    }, [isPlay, video]);
 
     return (
       <>
@@ -40,8 +42,7 @@ const Video = React.forwardRef(
               transparent
               opacity={opacity}
               toneMapped={true}
-              side={THREE.DoubleSide}
-              ref={ref as any}
+              ref={ref}
               map={texture}
             ></meshStandardMaterial>
           </mesh>
