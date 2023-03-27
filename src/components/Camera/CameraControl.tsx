@@ -19,6 +19,8 @@ const CameraControl = () => {
 
     state.camera.position.copy(pos);
     state.camera.lookAt(pos2);
+
+    console.log(scroll.offset, state.camera.position.z);
   });
 
   const pipeSpline = new THREE.CatmullRomCurve3([

@@ -5,15 +5,15 @@ import Section1 from './Section1';
 
 const section2 = import('./Section2');
 const section3 = import('./Section3');
-const section4 = import('./Section4');
-const section5 = import('./Section5');
+// const section4 = import('./Section4');
+// const section5 = import('./Section5');
 
 const Project = () => {
   const aspect = useAspect(1200, 800, 1);
   const PreloadSection2 = lazy(() => section2);
   const PreloadSection3 = lazy(() => section3);
-  const PreloadSection4 = lazy(() => section4);
-  const PreloadSection5 = lazy(() => section5);
+  // const PreloadSection4 = lazy(() => section4);
+  // const PreloadSection5 = lazy(() => section5);
 
   useLayoutEffect(() => {
     if (aspect[0] !== 0) state.aspect = aspect;
@@ -30,10 +30,10 @@ const Project = () => {
         <PreloadSection3 />
       </Suspense>
 
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={null}>
         <PreloadSection4 />
       </Suspense>
-      {/* <Suspense fallback={null}>
+      <Suspense fallback={null}>
         <PreloadSection5 />
       </Suspense> */}
     </group>
