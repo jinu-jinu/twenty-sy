@@ -8,8 +8,28 @@ import Image1 from './Image1';
 import Image2 from './Image2';
 import Image3 from './Image3';
 import ModelHeart from './ModelHeart';
+import { useScroll } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { useState } from 'react';
 
 const Section3 = () => {
+  const scroll = useScroll();
+
+  const [visible1, setVisible1] = useState(false);
+
+  useFrame(() => {
+    const trigger1 = scroll.visible(0.15 / 1, 0.2 / 1);
+
+    setVisible1(trigger1);
+  });
+
+  if (!visible1)
+    return (
+      <mesh>
+        <boxGeometry />
+      </mesh>
+    );
+
   return (
     <group position={[0, 0, -33]}>
       <MainTitle />

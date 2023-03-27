@@ -4,7 +4,6 @@ import { Scroll, ScrollControls, Sparkles } from '@react-three/drei';
 import Project from './components/Project';
 import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
-import { useState } from 'react';
 
 const App = () => {
   return (
@@ -17,6 +16,7 @@ const App = () => {
       >
         <Sparkles count={1000} size={3} scale={[20, 10, 170]} position={[0, 0, -85]} />
         <ambientLight intensity={1} />
+        <Perf />
 
         <ScrollControls pages={80} damping={0.4}>
           <Scroll html>
