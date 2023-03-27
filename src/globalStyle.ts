@@ -1,6 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle` 
+export const GlobalStyle = createGlobalStyle`
+  @keyframes bounce {
+    0%{
+      transform: translateY(0)
+    }
+
+    100%{
+      transform: translateY(8px)
+    }
+  }
+
   * {
     box-sizing: border-box;
   }
@@ -51,4 +61,32 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, p {
     margin: 0;
   }
+
+
+  .svg-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #fff;
+
+    & p {
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+
+    & .box {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    & .arrow-svg-wrapper{
+  animation: bounce 0.5s ease-in alternate infinite;
+  }
+
+ 
+}
+
 `;
