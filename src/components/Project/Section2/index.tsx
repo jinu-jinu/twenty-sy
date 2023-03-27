@@ -16,8 +16,7 @@ const SCROLL_START = 0.035;
 
 const Section2 = () => {
   const scroll = useScroll();
-
-  const tl = useRef<any>();
+  const tl = useRef<gsap.core.Timeline>(null!);
   const [mainTitle, subTitle1, moon, image1, subTitle2, video1, subTitle3, image2] = [
     useRef<Group>(null!),
     useRef<any>(),
