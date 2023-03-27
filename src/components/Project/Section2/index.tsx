@@ -8,13 +8,8 @@ import SubTitle2 from './SubTitle2';
 import SubTitle3 from './SubTitle3';
 import SubTitle4 from './SubTitle4';
 import ModelMoon from './ModelMoon';
-import { useScroll } from '@react-three/drei';
-import { useState } from 'react';
-import { useFrame } from '@react-three/fiber';
 
 const Section2 = () => {
-  const scroll = useScroll();
-
   return (
     <group position={[0, 0, -10]}>
       <MainTitle />

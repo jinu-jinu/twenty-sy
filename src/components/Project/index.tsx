@@ -24,6 +24,8 @@ const Project = () => {
       <Suspense fallback={null}>
         <PreloadSection3 />
       </Suspense>
+      {/* <Section4 />
+      <Section5 /> */}
     </group>
   );
 };
