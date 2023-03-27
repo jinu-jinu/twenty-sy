@@ -9,7 +9,7 @@ const Image8 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.586 / 1, 0.015 / 1);
+    const scrollOffset = scroll.range(0.605 / 1, 0.02 / 1);
 
     if (group.current) {
       group.current.children.forEach(c => {

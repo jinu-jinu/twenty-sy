@@ -9,7 +9,7 @@ const ModelHeart = () => {
   const heart = useGLTF('/model/heart.glb');
 
   useFrame(() => {
-    const visible = scroll.visible(0.313 / 1, 0.015 / 1);
+    const visible = scroll.visible(0.318 / 1, 0.015 / 1);
 
     if (heartRef.current)
       gsap.to(heartRef.current.scale, {

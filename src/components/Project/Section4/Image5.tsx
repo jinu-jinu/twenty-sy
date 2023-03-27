@@ -9,7 +9,7 @@ const Image5 = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.51 / 1, 0.015 / 1);
+    const scrollOffset = scroll.range(0.524 / 1, 0.001 / 1);
 
     if (group.current) {
       group.current.children.forEach(c => {
@@ -26,35 +26,21 @@ const Image5 = () => {
         scale={[1, 1]}
         transparent
         opacity={0}
-        position={[-0.7, 1.5, -0.5]}
-      />
-      <Image
-        url={'/image/section1/pt3/pt3-16.jpg'}
-        scale={[1.2, 1]}
-        transparent
-        opacity={0}
-        position={[0.6, 1, 0.5]}
+        position={[-1.4, 1.4, -1]}
       />
       <Image
         url={'/image/section1/pt3/pt3-17.jpg'}
-        scale={[1.75, 1]}
+        scale={[1.6, 1]}
         transparent
         opacity={0}
-        position={[-0.4, 0.2, 0]}
-      />
-      <Image
-        url={'/image/section1/pt3/pt3-18.jpg'}
-        scale={[1.4, 1]}
-        transparent
-        opacity={0}
-        position={[0.5, -0.5, -0.5]}
+        position={[1.5, 0.4, -0.2]}
       />
       <Image
         url={'/image/section1/pt3/pt3-19.jpg'}
         scale={[1.1 * 0.9, 1 * 0.9]}
         transparent
         opacity={0}
-        position={[-0.5, -1, 0]}
+        position={[-1.6, -0.7, -0.5]}
       />
     </group>
   );

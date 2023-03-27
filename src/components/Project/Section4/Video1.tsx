@@ -13,7 +13,7 @@ const Video1 = () => {
   const [isPlay, setIsPlay] = useState(false);
 
   useFrame(() => {
-    const scrollOffset = scroll.curve(0.345 / 1, 0.04 / 1);
+    const scrollOffset = scroll.curve(0.36 / 1, 0.03 / 1);
     const isVisible = scroll.visible(0.33 / 1, 0.065 / 1);
 
     setIsPlay(isVisible);

@@ -16,7 +16,6 @@ import Typo4 from './Typo4';
 import Typo5 from './Typo5';
 import Typo6 from './Typo6';
 import Typo7 from './Typo7';
-import Typo8 from './Typo8';
 
 const Section4 = () => {
   return (
@@ -49,23 +48,25 @@ const Section4 = () => {
           <Image4 />
         </group>
 
-        <group position={[0, -0.2, -27]}>
+        <group position={[0, -0.4, -27]}>
           <Typo5 />
           <Image5 />
         </group>
 
         <group position={[0, -0.15, -32]}>
           <Typo6 />
-          <Image6 />
         </group>
 
         <group position={[0, 0, -35]}>
-          <Typo7 />
+          <Image6 />
+        </group>
+
+        <group position={[0, 0, -38]}>
           <Image7 />
         </group>
 
-        <group position={[0, 0, -39]}>
-          <Typo8 />
+        <group position={[0, 0, -42]}>
+          <Typo7 />
           <Image8 />
         </group>
       </group>

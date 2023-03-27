@@ -9,7 +9,7 @@ const MainTitle = () => {
   const group = useRef<Group>(null!);
 
   useFrame(() => {
-    const scrollOffset = scroll.range(0.615 / 1, 0.015 / 1);
+    const scrollOffset = scroll.range(0.635 / 1, 0.015 / 1);
 
     group.current.children.forEach(c => {
       fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
