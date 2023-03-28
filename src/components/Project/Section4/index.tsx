@@ -2,7 +2,6 @@ import MainTitle from './MainTitle';
 import SubTitle1 from './SubTitle1';
 import Video1 from './Video1';
 import Image1 from './Image1';
-import Image2 from './Image2';
 import Image3 from './Image3';
 import Image4 from './Image4';
 import Image5 from './Image5';
@@ -10,7 +9,6 @@ import Image6 from './Image6';
 import Image7 from './Image7';
 import Image8 from './Image8';
 import Typo1 from './Typo1';
-import Typo2 from './Typo2';
 import Typo3 from './Typo3';
 import Typo4 from './Typo4';
 import Typo5 from './Typo5';
@@ -31,11 +29,6 @@ const Section4 = () => {
         <group position={[0, 0.15, -10]}>
           <Typo1 />
           <Image1 />
-        </group>
-
-        <group position={[0, -0.15, -15]}>
-          <Typo2 />
-          <Image2 />
         </group>
 
         <group position={[0, -0.3, -19]}>

@@ -1,10 +1,10 @@
-import Image1 from './Image1';
-import Image2 from './Image2';
-import Video1 from './Video1';
 import MainTitle from './MainTitle';
 import SubTitle1 from './SubTitle1';
 import SubTitle2 from './SubTitle2';
 import SubTitle3 from './SubTitle3';
+import Image1 from './Image1';
+import Image2 from './Image2';
+import Video1 from './Video1';
 import ModelMoon from './ModelMoon';
 import { useFrame } from '@react-three/fiber';
 import { useScroll } from '@react-three/drei';
@@ -130,7 +130,9 @@ const Section2 = () => {
 
   return (
     <group position={[0, 0, -9]}>
-      <MainTitle ref={mainTitle} />
+      <group>
+        <MainTitle ref={mainTitle} />
+      </group>
 
       <group position={[0, 0, -5]}>
         <SubTitle1 ref={subTitle1} />

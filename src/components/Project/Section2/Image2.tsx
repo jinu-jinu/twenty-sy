@@ -5,14 +5,14 @@ const Image2 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
     <group ref={ref}>
       <Image
-        url={`/image/section1/pt1/pt1-09.webp`}
+        url={`/image/section2/s2-05.webp`}
         transparent
         opacity={0}
         position={[-0.3, 1.2, 0]}
         scale={2}
       />
       <Image
-        url={`/image/section1/pt1/pt1-10.webp`}
+        url={`/image/section2/s2-06.webp`}
         transparent
         opacity={0}
         position={[0.3, -1.2, 0]}
