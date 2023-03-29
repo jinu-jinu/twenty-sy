@@ -1,4 +1,4 @@
-import React, { ForwardedRef, Suspense, useEffect, useMemo } from 'react';
+import React, { ForwardedRef, Suspense } from 'react';
 import * as THREE from 'three';
 
 type VideoProps = {
@@ -10,9 +10,9 @@ type VideoProps = {
 
 const Video = React.forwardRef(
   ({ pos, scale, opacity = 0, elem }: VideoProps, ref: ForwardedRef<any>) => {
-    console.log('video comp', elem);
-    if (elem) elem.play();
+    if (!elem) return <mesh></mesh>;
 
+    elem.play();
     const texture = new THREE.VideoTexture(elem);
 
     return (

@@ -1,16 +1,15 @@
 import Video from '@/components/common/Video';
+import { useVideos } from '@/components/Store/useVideo';
 import { Text } from '@react-three/drei';
 import { ForwardedRef, forwardRef } from 'react';
 
 const Video2 = forwardRef((_, ref: ForwardedRef<any>) => {
+  const { video3 } = useVideos;
+
   return (
     <>
       <group ref={ref}>
-        <Video
-          isPlay={true}
-          url={'/video/section1/pt2/pt2-02.mp4'}
-          scale={[1.5 * 1.2, 1 * 1.2, 1]}
-        />
+        <Video elem={video3} scale={[1.5 * 1.2, 1 * 1.2, 1]} />
         <Text
           fillOpacity={0}
           font="./font/Gangwon.ttf"

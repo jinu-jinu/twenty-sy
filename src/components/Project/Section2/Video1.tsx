@@ -1,4 +1,4 @@
-import { ASPECT } from '@/components/common/constant';
+import { ASPECT, GANGWON_B } from '@/components/common/constant';
 import Video from '@/components/common/Video';
 import { useVideos } from '@/components/Store/useVideo';
 import { Text } from '@react-three/drei';
@@ -12,7 +12,7 @@ const Video1 = forwardRef((_, ref: ForwardedRef<any>) => {
       <Video elem={video1!} pos={[0, 0.2, 0]} scale={[1.5 * ASPECT, 1 * ASPECT, 1]} />
       <Text
         fillOpacity={0}
-        font="./font/Gangwon.ttf"
+        font={GANGWON_B}
         fontSize={0.04}
         position={[0, -0.44, 0.05]}
         color="#ff6932"

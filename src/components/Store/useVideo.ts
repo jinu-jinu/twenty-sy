@@ -23,12 +23,12 @@ export const videoInit = async () => {
         video.onloadeddata = () => {
           useVideos[`video${i + 1}`] = video;
 
-          console.log(`video${i + 1} loaded`);
+          console.log(video, `video ${i + 1}`);
 
           return res;
         };
       })
   );
 
-  await Promise.all(videos);
+  await Promise.allSettled(videos);
 };

@@ -3,7 +3,7 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group position={[0, 0, 2]} ref={ref}>
+    <group position={[-0.1, 0, 2]} ref={ref}>
       <Text
         anchorX={0.4}
         font="./font/Gangwon.ttf"
