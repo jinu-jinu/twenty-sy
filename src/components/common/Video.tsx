@@ -2,38 +2,23 @@ import React, { ForwardedRef, Suspense, useEffect, useMemo } from 'react';
 import * as THREE from 'three';
 
 type VideoProps = {
-  url: string;
+  elem: any;
   scale: [number, number, number];
   pos?: [number, number, number];
-  rotation?: [number, number, number];
   opacity?: number;
-  isPlay?: boolean;
-  elem?: any;
 };
 
 const Video = React.forwardRef(
-  (
-    { url, pos, scale, rotation, opacity = 0, isPlay = false, elem }: VideoProps,
-    ref: ForwardedRef<any>
-  ) => {
-    // const video = useMemo(() => {
-    //   const res = document.createElement('video');
-    //   res.loop = true;
-    //   res.muted = true;
-    //   res.autoplay = true;
-    //   res.playsInline = true;
-    //   res.src = url;
+  ({ pos, scale, opacity = 0, elem }: VideoProps, ref: ForwardedRef<any>) => {
+    console.log('video comp', elem);
+    if (elem) elem.play();
 
-    //   return res;
-    // }, []);
-
-    elem.play();
     const texture = new THREE.VideoTexture(elem);
 
     return (
       <>
         <Suspense fallback={null}>
-          <mesh position={pos} rotation={rotation}>
+          <mesh position={pos}>
             <planeGeometry args={scale} />
             <meshStandardMaterial
               transparent

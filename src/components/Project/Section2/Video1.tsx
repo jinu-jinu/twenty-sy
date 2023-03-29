@@ -9,12 +9,7 @@ const Video1 = forwardRef((_, ref: ForwardedRef<any>) => {
 
   return (
     <group ref={ref}>
-      <Video
-        elem={video1!}
-        pos={[0, 0.2, 0]}
-        url={'/video/section1/pt1/pt1-01.mp4'}
-        scale={[1.5 * ASPECT, 1 * ASPECT, 1]}
-      />
+      <Video elem={video1!} pos={[0, 0.2, 0]} scale={[1.5 * ASPECT, 1 * ASPECT, 1]} />
       <Text
         fillOpacity={0}
         font="./font/Gangwon.ttf"
