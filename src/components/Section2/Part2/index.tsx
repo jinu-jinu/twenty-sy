@@ -3,8 +3,6 @@ import { useFrame } from '@react-three/fiber';
 import { useState } from 'react';
 import ParticleRabbit from './ParticleRabbit';
 import ParticleDeer from './ParticleDeer';
-import Text1 from './Text1';
-import Text2 from './Text2';
 import Text3 from './Text3';
 import { PunchEffectType } from '@/types/type';
 import PunchEffect from '@/components/effects/PunchEffect';
@@ -34,14 +32,10 @@ const Part2 = () => {
   return (
     <group position={[0, 0, -193]}>
       <group>
-        <Text1 />
         <ParticleRabbit />
       </group>
 
-      <group position={[0, 0, -12]}>
-        <Text2 />
-        {isVisible1 && <ParticleDeer />}
-      </group>
+      <group position={[0, 0, -12]}>{isVisible1 && <ParticleDeer />}</group>
 
       <group position={[0, 0, -20]}>
         <Text3 />
