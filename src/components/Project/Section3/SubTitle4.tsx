@@ -4,13 +4,13 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group>
+    <group ref={ref}>
       <Text
         font={GANGWON_B}
         fontSize={0.1}
         position={[0, 0, 0.1]}
         letterSpacing={0.04}
-        fillOpacity={1}
+        fillOpacity={0}
         anchorX={1}
         anchorY={-0.4}
         color={'#ea8e25'}
@@ -22,7 +22,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
         fontSize={0.1}
         position={[0, 0, 0.1]}
         letterSpacing={0.04}
-        fillOpacity={1}
+        fillOpacity={0}
         anchorX={1}
         anchorY={-0.25}
         color={'#fbb855'}
@@ -34,7 +34,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
         fontSize={0.1}
         position={[0, 0, 0.1]}
         letterSpacing={0.05}
-        fillOpacity={1}
+        fillOpacity={0}
         color={'#ea8e25'}
         anchorX={1}
         anchorY={-0.1}
@@ -46,7 +46,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
         fontSize={0.1}
         position={[0, 0, 0.1]}
         letterSpacing={0.05}
-        fillOpacity={1}
+        fillOpacity={0}
         color={'#fbb855'}
         anchorX={1}
         anchorY={0.05}
@@ -58,7 +58,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
         fontSize={0.1}
         position={[0, 0, 0.1]}
         letterSpacing={0.05}
-        fillOpacity={1}
+        fillOpacity={0}
         anchorX={1}
         anchorY={0.2}
         color={'#ea8e25'}
@@ -70,7 +70,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
         fontSize={0.3}
         position={[0, -0.55, 0.1]}
         letterSpacing={0.05}
-        fillOpacity={1}
+        fillOpacity={0}
         color={'#fc50a3'}
       >
         100DAY

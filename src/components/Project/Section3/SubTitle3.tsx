@@ -10,7 +10,7 @@ const SubTitle3 = forwardRef((_, ref: ForwardedRef<any>) => {
       font="/font/Gangwon.ttf"
       position={[0, 0, 2.5]}
       fontSize={0.1}
-      fillOpacity={1}
+      fillOpacity={0}
       maxWidth={1}
     >
       I'm happy to see you on stage, and I'm happy to hear your voice. I hope your future

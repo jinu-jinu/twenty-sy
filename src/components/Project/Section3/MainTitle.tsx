@@ -8,7 +8,7 @@ const MainTitle = forwardRef((_, ref: ForwardedRef<any>) => {
         font="/font/Prompt.ttf"
         position={[0, 0.15, 0]}
         fontSize={0.1}
-        fillOpacity={1}
+        fillOpacity={0}
       >
         MOMENT#2
       </Text>
@@ -16,7 +16,7 @@ const MainTitle = forwardRef((_, ref: ForwardedRef<any>) => {
         font="/font/Barlow.ttf"
         position={[0, -0.05, 0]}
         fontSize={0.3}
-        fillOpacity={1}
+        fillOpacity={0}
       >
         DEBUT
       </Text>

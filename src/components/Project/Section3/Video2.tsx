@@ -7,13 +7,12 @@ const Video2 = forwardRef((_, ref: ForwardedRef<any>) => {
     <>
       <group ref={ref}>
         <Video
-          opacity={1}
           isPlay={true}
           url={'/video/section1/pt2/pt2-02.mp4'}
           scale={[1.5 * 1.2, 1 * 1.2, 1]}
         />
         <Text
-          fillOpacity={1}
+          fillOpacity={0}
           font="./font/Gangwon.ttf"
           fontSize={0.04}
           color="#ff6932"

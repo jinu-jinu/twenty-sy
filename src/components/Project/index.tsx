@@ -20,6 +20,9 @@ const Project = () => {
   useLayoutEffect(() => {
     if (aspect[0] !== 0) state.aspect = aspect;
     gsap.registerPlugin(ScrollTrigger);
+
+    // 크롬앱 스크롤바 문제 테스트
+    scrollTo(0, 10);
   }, []);
 
   return (
@@ -29,9 +32,9 @@ const Project = () => {
         <PreloadSection2 />
       </Suspense>
 
-      <Suspense fallback={null}>
+      {/* <Suspense fallback={null}>
         <PreloadSection3 />
-      </Suspense>
+      </Suspense> */}
 
       {/* <Suspense fallback={null}>
         <PreloadSection4 />

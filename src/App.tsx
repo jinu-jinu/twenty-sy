@@ -4,8 +4,14 @@ import { Scroll, ScrollControls, Sparkles } from '@react-three/drei';
 import Project from './components/Project';
 import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
+import { useLayoutEffect } from 'react';
+import { videoInit } from './components/Store/useVideo';
 
 const App = () => {
+  useLayoutEffect(() => {
+    videoInit();
+  });
+
   return (
     <>
       <GlobalStyle />

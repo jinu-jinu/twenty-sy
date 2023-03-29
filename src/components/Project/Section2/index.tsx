@@ -12,7 +12,7 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Group, Mesh } from 'three';
 
-const SCROLL_START = 0.035;
+const SCROLL_START = 0.04;
 
 const Section2 = () => {
   const scroll = useScroll();
@@ -29,7 +29,9 @@ const Section2 = () => {
   ];
 
   useFrame(() => {
-    tl.current.seek((scroll.offset - SCROLL_START) * 8.5 * tl.current.duration());
+    // console.log(tl.current.duration());
+    // console.log((scroll.offset - SCROLL_START) * 8.3 * tl.current.duration());
+    tl.current.seek((scroll.offset - SCROLL_START) * 8.3 * tl.current.duration());
   });
 
   useLayoutEffect(() => {
@@ -45,7 +47,7 @@ const Section2 = () => {
         c,
         {
           fillOpacity: 1,
-          duration: 3,
+          duration: 1,
         },
         'main-title'
       );
@@ -57,11 +59,12 @@ const Section2 = () => {
         x: 0.08,
         y: 0.08,
         z: 0.08,
-        duration: 1,
+        duration: 0.5,
+        delay: 0.2,
       })
       .to(subTitle1.current, {
         fillOpacity: 1,
-        duration: 1.5,
+        duration: 0.5,
       });
 
     image1.current.children.forEach(c => {
@@ -70,7 +73,7 @@ const Section2 = () => {
         material,
         {
           opacity: 1,
-          duration: 2,
+          duration: 1.5,
         },
         'sub1-image'
       );
@@ -79,7 +82,7 @@ const Section2 = () => {
     // sub2
     tl.current.to(subTitle2.current, {
       fillOpacity: 1,
-      duration: 2,
+      duration: 1,
     });
     video1.current.children.forEach(c => {
       const geometry = (c as any).geometry;
@@ -89,7 +92,7 @@ const Section2 = () => {
           material,
           {
             opacity: 1,
-            duration: 2,
+            duration: 1,
           },
           'sub2-video'
         );
@@ -98,7 +101,7 @@ const Section2 = () => {
           c,
           {
             fillOpacity: 1,
-            duration: 2,
+            duration: 1,
           },
           'sub2-video'
         );
@@ -107,8 +110,8 @@ const Section2 = () => {
 
     // sub3
     tl.current.to(subTitle3.current, {
+      fillOpacity: 1,
       duration: 1,
-      fillOpacity: 2,
     });
     image2.current.children.forEach(c => {
       const material = (c as Mesh).material;
@@ -116,7 +119,7 @@ const Section2 = () => {
         material,
         {
           opacity: 1,
-          duration: 2,
+          duration: 1,
         },
         'sub2-image'
       );

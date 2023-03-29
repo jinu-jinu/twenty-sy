@@ -9,7 +9,7 @@ const Video1 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
     <Video
       ref={ref}
-      opacity={1}
+      opacity={0}
       isPlay={true}
       url={'/video/section1/pt2/pt2-01.mp4'}
       scale={[...aspect]}

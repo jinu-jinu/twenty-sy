@@ -4,34 +4,25 @@ import { ForwardedRef, forwardRef } from 'react';
 const SubTitle1 = forwardRef((_, ref: ForwardedRef<any>) => {
   const texture = useTexture('./image/gradations/palette.png');
 
-  const sentence = `
-  Congratulations
-  on your debut!
-  `;
-
   return (
-    <group position={[0, 0, 3.5]} ref={ref}>
+    <group position={[0, 0, 1]} ref={ref}>
       <Text
         font="./font/Gangwon.ttf"
-        position={[0, 0.1, 0]}
-        fontSize={0.04}
+        position={[-0.1, 0.06, 0]}
+        fontSize={0}
         letterSpacing={0.02}
-        fillOpacity={1}
+        fillOpacity={0}
       >
-        February 22, 2022
-        <meshStandardMaterial map={texture} />
+        Congraturation
       </Text>
       <Text
-        lineHeight={1}
         font="./font/Gangwon.ttf"
-        fontSize={0.1}
-        position={[0, -0.04, 0]}
-        letterSpacing={0.05}
-        fillOpacity={1}
+        position={[0.1, -0.06, 0]}
+        fontSize={0}
+        letterSpacing={0.02}
+        fillOpacity={0}
       >
-        {sentence}
-
-        <meshStandardMaterial map={texture} />
+        on your Debut!
       </Text>
     </group>
   );

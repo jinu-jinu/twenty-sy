@@ -4,18 +4,9 @@ import { ForwardedRef, forwardRef } from 'react';
 const ModelHeart = forwardRef((_, ref: ForwardedRef<any>) => {
   const heart = useGLTF('/model/heart.glb');
 
-  // useLayoutEffect(() => {
-  //   return () => {
-  //     if (heartRef.current) {
-  //       heartRef.current.geometry.dispose();
-  //       heartRef.current.material.dispose();
-  //     }
-  //   };
-  // }, []);
-
   return (
     <mesh
-      scale={0.3}
+      scale={0}
       position={[0.2, -0.4, 2.4]}
       rotation={[0, 0, Math.PI * -0.1]}
       ref={ref}
