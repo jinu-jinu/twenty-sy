@@ -222,7 +222,7 @@ const Section3 = () => {
         <Image3 ref={image3} />
       </group>
 
-      <group position={[0, -0.1, -2]}>
+      <group position={[0, -0.1, -26]}>
         <SubTitle4 ref={subTitle4} />
         <Image4 ref={image4} />
       </group>
