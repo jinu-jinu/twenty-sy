@@ -1,45 +1,26 @@
 import { GlobalStyle } from './globalStyle';
 import { Canvas } from '@react-three/fiber';
-import { Preload, Scroll, ScrollControls, Sparkles } from '@react-three/drei';
+import { Scroll, ScrollControls, Sparkles } from '@react-three/drei';
 import Project from './components/Project';
 import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PreloadVideo from './components/Video/PreloadVideo';
-import { useState } from 'react';
 import { useSnapshot } from 'valtio';
 import { state } from './components/Store/store';
-import { useFrame } from '@react-three/fiber';
 import Loading from './components/Loading/Loading';
+import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  const PreloadVideoProcess = () => {
-    const { progress, loadedVideoCount } = useSnapshot(state);
-
-    useFrame(() => {
-      if (progress === 100) return;
-
-      if (loadedVideoCount === 6) {
-        state.progress = 100;
-        setLoaded(true);
-      } else {
-        state.progress = Math.round((loadedVideoCount / 6) * 100);
-        setLoaded(false);
-      }
-    });
-
-    return null;
-  };
+  const { loadedVideoCount } = useSnapshot(state);
 
   return (
     <>
       <GlobalStyle />
-      {!loaded ? <Loading /> : null}
+      {loadedVideoCount !== 6 ? <Loading /> : null}
       <Canvas
         gl={{ antialias: false }}
         dpr={Math.min(devicePixelRatio, 2)}
@@ -67,9 +48,6 @@ const App = () => {
           </Scroll>
 
           <PreloadVideo />
-          <PreloadVideoProcess />
-          <Preload all />
-
           <CameraControl />
           <Project />
         </ScrollControls>
@@ -78,4 +56,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default React.memo(App);

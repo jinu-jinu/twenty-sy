@@ -1,7 +1,6 @@
-import { useAspect, useScroll, useVideoTexture } from '@react-three/drei';
+import { useScroll, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { Suspense, useLayoutEffect, useRef } from 'react';
-import { useSnapshot } from 'valtio';
+import React, { Suspense, useRef } from 'react';
 import { ASPECT } from '../common/constant';
 import { state } from '../Store/store';
 import { Group, Mesh } from 'three';
@@ -9,7 +8,7 @@ import gsap from 'gsap';
 
 const URLS = ['s2-01', 's3-01', 's3-02', 's4-01', 's5-01', 's6-01'];
 
-const VideoMaterial = ({ url }: { url: string }) => {
+const VideoMaterial = React.memo(({ url }: { url: string }) => {
   const texture = useVideoTexture(`/video/${url}.mp4`, {
     muted: true,
     loop: true,
@@ -26,7 +25,7 @@ const VideoMaterial = ({ url }: { url: string }) => {
   texture.dispose();
 
   return <meshBasicMaterial map={texture} toneMapped={true} opacity={0} transparent />;
-};
+});
 
 const PreloadVideo = () => {
   const scroll = useScroll();
@@ -87,4 +86,4 @@ const PreloadVideo = () => {
   );
 };
 
-export default PreloadVideo;
+export default React.memo(PreloadVideo);

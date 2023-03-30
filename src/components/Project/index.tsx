@@ -1,6 +1,4 @@
-import { useAspect } from '@react-three/drei';
-import { lazy, Suspense, useLayoutEffect } from 'react';
-import { state } from '../Store/store';
+import React, { lazy, Suspense } from 'react';
 import Section1 from './Section1';
 
 const section2 = import('./Section2');
@@ -36,4 +34,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default React.memo(Project);

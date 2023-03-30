@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useSnapshot } from 'valtio';
 import { state } from '../Store/store';
+import React from 'react';
 
 const LoadingContainer = styled.section`
   position: relative;
@@ -27,16 +28,16 @@ const LoadingProgress = styled.p`
 `;
 
 const Loading = () => {
-  const { progress } = useSnapshot(state);
+  const { loadedVideoCount } = useSnapshot(state);
 
   return (
     <LoadingContainer>
       <LoadingTitleWrapper>
         <LoadingTitleText>LOADING</LoadingTitleText>
-        <LoadingProgress>{progress}%</LoadingProgress>
+        <LoadingProgress>{Math.round((loadedVideoCount / 6) * 100)}%</LoadingProgress>
       </LoadingTitleWrapper>
     </LoadingContainer>
   );
 };
 
-export default Loading;
+export default React.memo(Loading);
