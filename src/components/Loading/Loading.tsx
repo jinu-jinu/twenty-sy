@@ -3,6 +3,8 @@ import { useSnapshot } from 'valtio';
 import { state } from '../Store/store';
 
 const LoadingContainer = styled.section`
+  position: relative;
+  z-index: 100;
   width: 100vw;
   height: 100vh;
   background-color: #000;

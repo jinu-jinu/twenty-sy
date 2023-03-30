@@ -28,6 +28,7 @@ const App = () => {
         state.progress = 100;
         setLoaded(true);
       } else {
+        console.log(1);
         state.progress = Math.round((loadedVideoCount / 6) * 100);
         setLoaded(false);
       }
@@ -69,10 +70,9 @@ const App = () => {
           <CameraControl />
           <Project />
           <PreloadVideo />
+          <PreloadVideoProcess />
+          <Preload all />
         </ScrollControls>
-
-        <PreloadVideoProcess />
-        <Preload all />
       </Canvas>
     </>
   );
