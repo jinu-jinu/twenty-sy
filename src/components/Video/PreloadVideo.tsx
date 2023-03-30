@@ -1,6 +1,6 @@
-import { useScroll, useVideoTexture } from '@react-three/drei';
+import { useAspect, useScroll, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { Suspense, useRef } from 'react';
+import { Suspense, useLayoutEffect, useRef } from 'react';
 import { useSnapshot } from 'valtio';
 import { ASPECT } from '../common/constant';
 import { state } from '../Store/store';
@@ -30,7 +30,6 @@ const VideoMaterial = ({ url }: { url: string }) => {
 
 const PreloadVideo = () => {
   const scroll = useScroll();
-  const { aspect } = useSnapshot(state);
   const group = useRef<Group>(null!);
 
   const POSITIONS: [number, number, number][] = [
@@ -43,11 +42,11 @@ const PreloadVideo = () => {
   ];
   const SCALES: [number, number, number][] = [
     [1.5 * ASPECT, 1 * ASPECT, 1],
-    [...aspect],
+    [11.5, 7.6, 1],
     [1.5 * ASPECT, 1 * ASPECT, 1],
-    [...aspect],
-    [...aspect],
-    [...aspect],
+    [11.5, 7.6, 1],
+    [11.5, 7.6, 1],
+    [11.5, 7.6, 1],
   ];
 
   useFrame(() => {

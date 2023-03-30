@@ -9,15 +9,10 @@ const section4 = import('./Section4');
 const section5 = import('./Section5');
 
 const Project = () => {
-  const aspect = useAspect(1200, 800, 1);
   const PreloadSection2 = lazy(() => section2);
   const PreloadSection3 = lazy(() => section3);
   const PreloadSection4 = lazy(() => section4);
   const PreloadSection5 = lazy(() => section5);
-
-  useLayoutEffect(() => {
-    if (aspect[0] !== 0) state.aspect = aspect;
-  }, []);
 
   return (
     <group>
