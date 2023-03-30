@@ -7,8 +7,6 @@ import Image1 from './Image1';
 import Image2 from './Image2';
 import Image3 from './Image3';
 import Image4 from './Image4';
-import Video1 from './Video1';
-import Video2 from './Video2';
 import ModelHeart from './ModelHeart';
 import { useScroll } from '@react-three/drei';
 import { useLayoutEffect, useRef } from 'react';
@@ -18,19 +16,17 @@ import gsap from 'gsap';
 
 const SCROLL_START = 0.16;
 
-// text4 = 0.1 ~~~~ 0.3
-
 const Section3 = () => {
   const scroll = useScroll();
   const tl = useRef<gsap.core.Timeline>(null!);
   const mainTitle = useRef<Group>(null!);
   const heart = useRef<any>();
-  const [video1, video2] = [useRef<any>(), useRef<Group>(null!)];
-  const [subTitle1, subTitle2, subTitle3, subTitle4] = [
+  const [subTitle1, subTitle2, subTitle3, subTitle4, videoTitle] = [
     useRef<Group>(null!),
     useRef<Group>(null!),
     useRef<any>(),
     useRef<Group>(null!),
+    useRef<any>(),
   ];
   const [image1, image2, image3, image4] = [
     useRef<Group>(null!),
@@ -40,12 +36,11 @@ const Section3 = () => {
   ];
 
   useFrame(() => {
-    console.log(
-      (scroll.offset - SCROLL_START) * 5 * tl.current.duration(),
-      tl.current.duration()
-    );
+    // console.log(
+    //   (scroll.offset - SCROLL_START) * 5 * tl.current.duration(),
+    //   tl.current.duration()
+    // );
 
-    // 스크롤 몇퍼센트에 끝나는지 알아낸 후 조절하기
     tl.current.seek((scroll.offset - SCROLL_START) * 5 * tl.current.duration());
   });
 
@@ -69,22 +64,12 @@ const Section3 = () => {
       );
     });
 
-    // video1
-    tl.current
-      .to(video1.current, {
-        opacity: 1,
-        duration: 4,
-      })
-      .to(video1.current, {
-        opacity: 0,
-        duration: 2,
-      });
-
     // sub1
-    subTitle1.current.children.forEach(c => {
+    subTitle1.current.children.forEach((c, i) => {
       tl.current.to(c, {
         fillOpacity: 1,
         duration: 1.5,
+        delay: i === 0 ? 6 : 0,
       });
     });
 
@@ -135,30 +120,6 @@ const Section3 = () => {
         duration: 0.5,
       });
 
-    video2.current.children.forEach(c => {
-      const geometry = (c as any).geometry;
-      const material = (c as any).material;
-      if (geometry.type === 'PlaneGeometry') {
-        tl.current.to(
-          material,
-          {
-            opacity: 1,
-            duration: 2,
-          },
-          'sub2-video'
-        );
-      } else {
-        tl.current.to(
-          c,
-          {
-            fillOpacity: 1,
-            duration: 2,
-          },
-          'sub2-video'
-        );
-      }
-    });
-
     image3.current.children.forEach(c => {
       const material = (c as Mesh).material;
       tl.current.to(
@@ -166,12 +127,13 @@ const Section3 = () => {
         {
           opacity: 1,
           duration: 2,
+          delay: 2,
         },
         'sub3-image'
       );
     });
 
-    // sub4 30.5
+    // sub4
     image4.current.children.forEach((c, i) => {
       const material = (c as Mesh).material;
       tl.current.to(
@@ -202,7 +164,6 @@ const Section3 = () => {
     <group position={[0, 0, -27]}>
       <group>
         <MainTitle ref={mainTitle} />
-        <Video1 ref={video1} />
       </group>
 
       <group position={[0, 0, -8]}>
@@ -218,7 +179,6 @@ const Section3 = () => {
       <group position={[0, 0, -19]}>
         <SubTitle3 ref={subTitle3} />
         <ModelHeart ref={heart} />
-        <Video2 ref={video2} />
         <Image3 ref={image3} />
       </group>
 

@@ -4,7 +4,6 @@ import SubTitle2 from './SubTitle2';
 import SubTitle3 from './SubTitle3';
 import Image1 from './Image1';
 import Image2 from './Image2';
-import Video1 from './Video1';
 import ModelMoon from './ModelMoon';
 import { useFrame } from '@react-three/fiber';
 import { useScroll } from '@react-three/drei';
@@ -17,16 +16,13 @@ const SCROLL_START = 0.04;
 const Section2 = () => {
   const scroll = useScroll();
   const tl = useRef<gsap.core.Timeline>(null!);
-  const [mainTitle, subTitle1, moon, image1, subTitle2, video1, subTitle3, image2] = [
-    useRef<Group>(null!),
-    useRef<any>(),
-    useRef<any>(),
-    useRef<Group>(null!),
+  const [mainTitle, moon] = [useRef<Group>(null!), useRef<any>()];
+  const [subTitle1, subTitle2, subTitle3] = [
     useRef<any>(),
     useRef<Group>(null!),
     useRef<any>(),
-    useRef<Group>(null!),
   ];
+  const [image1, image2] = [useRef<Group>(null!), useRef<Group>(null!)];
 
   useFrame(() => {
     // console.log(tl.current.duration());
@@ -84,34 +80,12 @@ const Section2 = () => {
       fillOpacity: 1,
       duration: 1,
     });
-    video1.current.children.forEach(c => {
-      const geometry = (c as any).geometry;
-      const material = (c as any).material;
-      if (geometry.type === 'PlaneGeometry') {
-        tl.current.to(
-          material,
-          {
-            opacity: 1,
-            duration: 1,
-          },
-          'sub2-video'
-        );
-      } else {
-        tl.current.to(
-          c,
-          {
-            fillOpacity: 1,
-            duration: 1,
-          },
-          'sub2-video'
-        );
-      }
-    });
 
     // sub3
     tl.current.to(subTitle3.current, {
       fillOpacity: 1,
       duration: 1,
+      delay: 1,
     });
     image2.current.children.forEach(c => {
       const material = (c as Mesh).material;
@@ -145,7 +119,6 @@ const Section2 = () => {
 
       <group position={[0, 0, -10]}>
         <SubTitle2 ref={subTitle2} />
-        <Video1 ref={video1} />
       </group>
 
       <group position={[0, 0, -15]}>

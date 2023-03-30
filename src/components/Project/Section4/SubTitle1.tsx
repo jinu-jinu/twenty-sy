@@ -1,47 +1,60 @@
-import { fillOpacityAni } from '@/utils/animation';
-import { Text, useScroll, useTexture } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { Group } from 'three';
+import { Text } from '@react-three/drei';
+import { ForwardedRef, forwardRef } from 'react';
 
-const SubTitle1 = () => {
-  const scroll = useScroll();
-  const group = useRef<Group>(null!);
-  const texture = useTexture('./image/gradations/summer.webp');
-
-  useFrame(() => {
-    const scrollOffset = scroll.range(0.383 / 1, 0.01 / 1);
-
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
-    });
-  });
-
+const SubTitle1 = forwardRef((_, ref: ForwardedRef<any>) => {
+  const word = `
+  시
+  카
+  고
+  `;
   return (
-    <group rotation={[0, 0, Math.PI * 0.5]} ref={group}>
+    <group ref={ref}>
       <Text
-        anchorX={0.1}
-        font="./font/Gangwon.ttf"
-        position={[0, 0.04, 0]}
-        fontSize={0.04}
-        letterSpacing={0.02}
-        fillOpacity={1}
+        font="./font/Prompt.ttf"
+        fontSize={0}
+        position={[0, 0.2, 0.1]}
+        letterSpacing={0.04}
+        fillOpacity={0}
+        anchorX={1}
+        anchorY={-0.7}
+        color={'#F6F7D7'}
       >
-        Summber of 2022
-        <meshStandardMaterial map={texture} />
+        KCON
       </Text>
       <Text
         font="./font/Prompt.ttf"
-        fontSize={0.07}
-        position={[0, -0.04, 0]}
+        fontSize={0}
+        position={[0.5, 0.15, 0.1]}
         letterSpacing={0.04}
-        fillOpacity={1}
+        fillOpacity={0}
+        anchorX={1}
+        anchorY={-0.35}
+        color={'#3EC1D3'}
       >
-        VACATION
-        <meshStandardMaterial map={texture} />
+        2022
+      </Text>
+      <Text
+        font="./font/Prompt.ttf"
+        fontSize={0}
+        position={[-0.2, -0.37, 0.1]}
+        letterSpacing={0.05}
+        fillOpacity={0}
+        color={'#FF9A00'}
+      >
+        LA
+      </Text>
+      <Text
+        font="./font/Gangwon.ttf"
+        fontSize={0}
+        position={[0.3, -0.13, 0.1]}
+        fillOpacity={0}
+        lineHeight={1}
+        color={'#FF165D'}
+      >
+        {word}
       </Text>
     </group>
   );
-};
+});
 
 export default SubTitle1;

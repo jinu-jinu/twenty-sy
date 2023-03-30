@@ -1,23 +1,9 @@
-import { fillOpacityAni } from '@/utils/animation';
-import { Text, useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { Group } from 'three';
+import { Text } from '@react-three/drei';
+import { ForwardedRef, forwardRef } from 'react';
 
-const Typo7 = () => {
-  const scroll = useScroll();
-  const group = useRef<Group>(null!);
-
-  useFrame(() => {
-    const scrollOffset = scroll.range(0.605 / 1, 0.02 / 1);
-
-    group.current.children.forEach(c => {
-      fillOpacityAni<Text>(c as unknown as Text, scrollOffset);
-    });
-  });
-
+const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={group}>
+    <group ref={ref}>
       <Text
         font="./font/Gangwon.ttf"
         fontSize={0.08}
@@ -83,6 +69,6 @@ const Typo7 = () => {
       </Text>
     </group>
   );
-};
+});
 
-export default Typo7;
+export default SubTitle4;

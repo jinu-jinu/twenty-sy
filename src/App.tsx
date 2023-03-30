@@ -1,20 +1,45 @@
 import { GlobalStyle } from './globalStyle';
 import { Canvas } from '@react-three/fiber';
-import { Scroll, ScrollControls, Sparkles } from '@react-three/drei';
+import { Preload, Scroll, ScrollControls, Sparkles } from '@react-three/drei';
 import Project from './components/Project';
 import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
-import { useLayoutEffect } from 'react';
-import { videoInit } from './components/Store/useVideo';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import PreloadVideo from './components/Video/PreloadVideo';
+import { useState } from 'react';
+import { useSnapshot } from 'valtio';
+import { state } from './components/Store/store';
+import { useFrame } from '@react-three/fiber';
+import Loading from './components/Loading/Loading';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  useLayoutEffect(() => {
-    videoInit();
-  });
+  const [loaded, setLoaded] = useState(false);
+
+  const PreloadVideoProcess = () => {
+    const { progress, loadedVideoCount } = useSnapshot(state);
+
+    useFrame(() => {
+      if (progress === 100) return;
+
+      if (loadedVideoCount === 6) {
+        state.progress = 100;
+        setLoaded(true);
+      } else {
+        state.progress = Math.round((loadedVideoCount / 6) * 100);
+        setLoaded(false);
+      }
+    });
+
+    return null;
+  };
 
   return (
     <>
       <GlobalStyle />
+      {!loaded ? <Loading /> : null}
       <Canvas
         gl={{ antialias: false }}
         dpr={Math.min(devicePixelRatio, 2)}
@@ -24,7 +49,7 @@ const App = () => {
         <ambientLight intensity={1} />
         <Perf />
 
-        <ScrollControls pages={50} damping={0.4}>
+        <ScrollControls pages={50} damping={1}>
           <Scroll html>
             <div className="svg-container">
               <div className="box">
@@ -43,7 +68,11 @@ const App = () => {
 
           <CameraControl />
           <Project />
+          <PreloadVideo />
         </ScrollControls>
+
+        <PreloadVideoProcess />
+        <Preload all />
       </Canvas>
     </>
   );

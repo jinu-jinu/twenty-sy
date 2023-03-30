@@ -1,49 +1,53 @@
-import { opacityAni } from '@/utils/animation';
-import { Image, useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { Group, Mesh } from 'three';
+import { Image } from '@react-three/drei';
+import { ForwardedRef, forwardRef } from 'react';
 
-const Image4 = () => {
-  const scroll = useScroll();
-  const group = useRef<Group>(null!);
-
-  useFrame(() => {
-    const scrollOffset = scroll.range(0.49 / 1, 0.01 / 1);
-
-    if (group.current) {
-      group.current.children.forEach(c => {
-        const material = (c as Mesh).material;
-        opacityAni(material, scrollOffset, 3);
-      });
-    }
-  });
-
+const Image4 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={group} scale={0.5}>
+    <group ref={ref} scale={0.6}>
       <Image
-        url={'/image/section1/pt3/pt3-12.jpg'}
-        scale={[1.75 * 0.9, 1 * 0.9]}
+        url={'/image/section4/s4-20.jpg'}
+        scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[0.7, 0.8, 0]}
+        position={[-1, 1.3, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-13.jpg'}
-        scale={[1.75 * 0.8, 1 * 0.8]}
+        url={'/image/section4/s4-21.jpg'}
+        scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[-0.4, -0.6, 0]}
+        position={[1, 1.3, 0]}
       />
       <Image
-        url={'/image/section1/pt3/pt3-14.jpg'}
-        scale={[1.75 * 0.8, 1 * 0.8]}
+        url={'/image/section4/s4-22.jpg'}
+        scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[-1, 0.9, -0.5]}
+        position={[-1, 0, 0]}
+      />
+      <Image
+        url={'/image/section4/s4-23.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[1, 0, 0]}
+      />
+      <Image
+        url={'/image/section4/s4-24.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[-1, -1.3, 0]}
+      />
+      <Image
+        url={'/image/section4/s4-25.jpg'}
+        scale={[1.75, 1]}
+        transparent
+        opacity={0}
+        position={[1, -1.3, 0]}
       />
     </group>
   );
-};
+});
 
 export default Image4;

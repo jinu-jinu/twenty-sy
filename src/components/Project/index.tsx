@@ -2,8 +2,6 @@ import { useAspect } from '@react-three/drei';
 import { lazy, Suspense, useLayoutEffect } from 'react';
 import { state } from '../Store/store';
 import Section1 from './Section1';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const section2 = import('./Section2');
 const section3 = import('./Section3');
@@ -19,7 +17,6 @@ const Project = () => {
 
   useLayoutEffect(() => {
     if (aspect[0] !== 0) state.aspect = aspect;
-    gsap.registerPlugin(ScrollTrigger);
   }, []);
 
   return (
@@ -36,6 +33,7 @@ const Project = () => {
       {/* <Suspense fallback={null}>
         <PreloadSection4 />
       </Suspense> */}
+
       {/* <Suspense fallback={null}>
         <PreloadSection5 />
       </Suspense> */}

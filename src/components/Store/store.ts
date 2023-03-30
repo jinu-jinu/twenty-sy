@@ -2,10 +2,10 @@ import { proxy } from 'valtio';
 
 export const state: {
   aspect: [number, number, number];
-  isResourceLoaded: boolean;
-  video1: any;
+  progress: number;
+  loadedVideoCount: number;
 } = proxy({
   aspect: [1.5, 1, 1],
-  isResourceLoaded: false,
-  video1: document.createElement('div'),
+  progress: 0,
+  loadedVideoCount: 0,
 });

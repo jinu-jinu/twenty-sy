@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { useState } from 'react';
 import ParticleRabbit from './ParticleRabbit';
 import ParticleDeer from './ParticleDeer';
-import Text3 from './Text3';
+import Text3 from './honey';
 import { PunchEffectType } from '@/types/type';
 import PunchEffect from '@/components/effects/PunchEffect';
 

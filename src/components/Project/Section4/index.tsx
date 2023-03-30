@@ -1,67 +1,48 @@
 import MainTitle from './MainTitle';
-import SubTitle1 from './SubTitle1';
 import Video1 from './Video1';
-import Image1 from './Image1';
-import Image3 from './Image3';
-import Image4 from './Image4';
-import Image5 from './Image5';
-import Image6 from './Image6';
-import Image7 from './Image7';
-import Image8 from './Image8';
-import Typo1 from './Typo1';
-import Typo3 from './Typo3';
-import Typo4 from './Typo4';
-import Typo5 from './Typo5';
-import Typo6 from './Typo6';
-import Typo7 from './Typo7';
+import { useRef } from 'react';
 
 const Section4 = () => {
+  const ref = useRef();
+
   return (
     <>
-      <group position={[0, 0, -56]}>
-        <MainTitle />
+      {/* 원래 위치는 -57 */}
+      <group position={[0, 0, -9]}>
+        <MainTitle ref={ref} />
         <Video1 />
 
-        <group position={[0, 0, -6]}>
-          <SubTitle1 />
-        </group>
-
-        <group position={[0, 0.15, -10]}>
+        {/* <group position={[0, 0.15, -10]}>
           <Typo1 />
           <Image1 />
-        </group>
+        </group> */}
 
-        <group position={[0, -0.3, -19]}>
+        {/* <group position={[0, -0.3, -19]}>
           <Typo3 />
           <Image3 />
-        </group>
+        </group> */}
 
-        <group position={[0, 0.2, -23]}>
+        {/* <group position={[0, 0.2, -23]}>
           <Typo4 />
           <Image4 />
-        </group>
+        </group> */}
 
-        <group position={[0, -0.4, -27]}>
-          <Typo5 />
-          <Image5 />
-        </group>
-
-        <group position={[0, -0.15, -32]}>
+        {/* <group position={[0, -0.15, -32]}>
           <Typo6 />
-        </group>
+        </group> */}
 
-        <group position={[0, 0, -35]}>
+        {/* <group position={[0, 0, -35]}>
           <Image6 />
-        </group>
+        </group> */}
 
-        <group position={[0, 0, -38]}>
+        {/* <group position={[0, 0, -38]}>
           <Image7 />
-        </group>
+        </group> */}
 
-        <group position={[0, 0, -42]}>
+        {/* <group position={[0, 0, -42]}>
           <Typo7 />
           <Image8 />
-        </group>
+        </group> */}
       </group>
     </>
   );
