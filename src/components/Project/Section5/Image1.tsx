@@ -1,32 +1,9 @@
-import { opacityAni } from '@/utils/animation';
-import { Image, useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
-import { Group, Mesh } from 'three';
+import { Image } from '@react-three/drei';
 
 const Image1 = () => {
-  const scroll = useScroll();
-  const group1 = useRef<Group>(null!);
-  const group2 = useRef<Group>(null!);
-
-  useFrame(() => {
-    const scrollOffset1 = scroll.range(0.528 / 1, 0.01 / 1);
-    const scrollOffset2 = scroll.range(0.535 / 1, 0.01 / 1);
-
-    group1.current.children.forEach(c => {
-      const material = (c as Mesh).material;
-      opacityAni<typeof material>(material, scrollOffset1);
-    });
-
-    group2.current.children.forEach(c => {
-      const material = (c as Mesh).material;
-      opacityAni<typeof material>(material, scrollOffset2);
-    });
-  });
-
   return (
     <group>
-      <group ref={group1}>
+      <group>
         <Image
           url={`/image/section1/pt4/pt4-05.webp`}
           transparent
@@ -50,7 +27,7 @@ const Image1 = () => {
         />
       </group>
 
-      <group ref={group2}>
+      <group>
         <Image
           url={`/image/section1/pt4/pt4-01.webp`}
           transparent

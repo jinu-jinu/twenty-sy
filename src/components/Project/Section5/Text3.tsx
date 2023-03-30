@@ -1,18 +1,6 @@
-import { fillOpacityAni } from '@/utils/animation';
-import { Float, Text, useScroll } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
-import { useRef } from 'react';
+import { Float, Text } from '@react-three/drei';
 
 const Text3 = () => {
-  const scroll = useScroll();
-  const text = useRef<any>();
-
-  useFrame(() => {
-    const scrollOffset = scroll.range(0.494 / 1, 0.01 / 1);
-
-    fillOpacityAni(text.current, scrollOffset);
-  });
-
   const sentence = `
     "기나긴 밤 반복된 
       bad dreams
@@ -31,7 +19,6 @@ const Text3 = () => {
         position={[0, 0, 3]}
         fontSize={0.05}
         fillOpacity={0}
-        ref={text}
       >
         {sentence}
       </Text>

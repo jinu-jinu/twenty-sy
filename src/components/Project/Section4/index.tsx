@@ -1,5 +1,4 @@
 import MainTitle from './MainTitle';
-import Video1 from './Video1';
 import { useRef } from 'react';
 
 const Section4 = () => {
@@ -10,7 +9,6 @@ const Section4 = () => {
       {/* 원래 위치는 -57 */}
       <group position={[0, 0, -9]}>
         <MainTitle ref={ref} />
-        <Video1 />
 
         {/* <group position={[0, 0.15, -10]}>
           <Typo1 />

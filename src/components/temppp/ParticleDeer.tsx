@@ -1,6 +1,6 @@
 import { Float } from '@react-three/drei';
 import * as THREE from 'three';
-import ParticleEffect from '../../effects/ParticleEffect';
+import ParticleEffect from '../effects/ParticleEffect';
 
 const ParticleDeer = () => {
   return (

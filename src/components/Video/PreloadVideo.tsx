@@ -37,17 +37,17 @@ const PreloadVideo = () => {
     [0, 0.1, -19],
     [0, 0, -32],
     [0, 0, -46],
-    [-1, 1, 0],
-    [1, -1, 0],
+    [0, 0, -62],
+    [0, 0, -101],
     [-1, -1, 0],
   ];
   const SCALES: [number, number, number][] = [
     [1.5 * ASPECT, 1 * ASPECT, 1],
     [...aspect],
     [1.5 * ASPECT, 1 * ASPECT, 1],
-    [1.5 * ASPECT, 1 * ASPECT, 1],
-    [1.5 * ASPECT, 1 * ASPECT, 1],
-    [1.5 * ASPECT, 1 * ASPECT, 1],
+    [...aspect],
+    [...aspect],
+    [...aspect],
   ];
 
   useFrame(() => {
