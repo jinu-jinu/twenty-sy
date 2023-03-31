@@ -5,14 +5,14 @@ const Image4 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
     <group scale={0.5} ref={ref}>
       <Image
-        url={'/image/section3/s3-12.jpg'}
+        url={'/image/section3/s3-20.jpg'}
         scale={[1, 1.25]}
         transparent
         opacity={0}
         position={[0.6, 1.3, -0.5]}
       />
       <Image
-        url={'/image/section3/s3-13.jpg'}
+        url={'/image/section3/s3-21.jpg'}
         scale={[1, 1]}
         transparent
         opacity={0}
@@ -20,7 +20,7 @@ const Image4 = forwardRef((_, ref: ForwardedRef<any>) => {
         rotation={[0, 0, Math.PI * 0.1]}
       />
       <Image
-        url={'/image/section3/s3-14.jpg'}
+        url={'/image/section3/s3-22.jpg'}
         scale={[1, 1.25]}
         transparent
         opacity={0}

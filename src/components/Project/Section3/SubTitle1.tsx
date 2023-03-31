@@ -5,7 +5,7 @@ const SubTitle1 = forwardRef((_, ref: ForwardedRef<any>) => {
   const texture = useTexture('./image/gradations/palette.png');
 
   return (
-    <group position={[0, 0, 1]} ref={ref}>
+    <group position={[0, 0, 1.5]} ref={ref}>
       <Text
         font="./font/Gangwon.ttf"
         position={[-0.1, 0.06, 0]}

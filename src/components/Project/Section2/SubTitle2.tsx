@@ -9,7 +9,7 @@ const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
       anchorX={0.33}
       font={GANGWON_B}
       fontSize={0.05}
-      position={[0, -0.35, 2]}
+      position={[0, -0.35, 1.5]}
       letterSpacing={0.05}
       fillOpacity={0}
       lineHeight={1.2}

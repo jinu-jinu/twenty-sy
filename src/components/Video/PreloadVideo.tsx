@@ -1,14 +1,30 @@
 import { useScroll, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import React, { Suspense, useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { ASPECT } from '../common/constant';
 import { state } from '../Store/store';
 import { Group, Mesh } from 'three';
 import gsap from 'gsap';
 
 const URLS = ['s2-01', 's3-01', 's3-02', 's4-01', 's5-01', 's6-01'];
+const POSITIONS: [number, number, number][] = [
+  [0, 0.1, -19],
+  [0, 0, -32],
+  [0, 0, -46],
+  [0, 0, -62],
+  [0, 0, -101],
+  [-1, -1, 0],
+];
+const SCALES: [number, number, number][] = [
+  [1.5 * ASPECT, 1 * ASPECT, 1],
+  [11.5, 7.6, 1],
+  [1.5 * ASPECT, 1 * ASPECT, 1],
+  [11.5, 7.6, 1],
+  [11.5, 7.6, 1],
+  [11.5, 7.6, 1],
+];
 
-const VideoMaterial = React.memo(({ url }: { url: string }) => {
+const VideoMaterial = ({ url }: { url: string }) => {
   const texture = useVideoTexture(`/video/${url}.mp4`, {
     muted: true,
     loop: true,
@@ -24,29 +40,12 @@ const VideoMaterial = React.memo(({ url }: { url: string }) => {
 
   texture.dispose();
 
-  return <meshBasicMaterial map={texture} toneMapped={true} opacity={0} transparent />;
-});
+  return <meshBasicMaterial map={texture} toneMapped={true} opacity={1} transparent />;
+};
 
 const PreloadVideo = () => {
   const scroll = useScroll();
   const group = useRef<Group>(null!);
-
-  const POSITIONS: [number, number, number][] = [
-    [0, 0.1, -19],
-    [0, 0, -32],
-    [0, 0, -46],
-    [0, 0, -62],
-    [0, 0, -101],
-    [-1, -1, 0],
-  ];
-  const SCALES: [number, number, number][] = [
-    [1.5 * ASPECT, 1 * ASPECT, 1],
-    [11.5, 7.6, 1],
-    [1.5 * ASPECT, 1 * ASPECT, 1],
-    [11.5, 7.6, 1],
-    [11.5, 7.6, 1],
-    [11.5, 7.6, 1],
-  ];
 
   useFrame(() => {
     const video1Opacity = scroll.range(0.11 / 1, 0.01 / 1);
@@ -77,7 +76,7 @@ const PreloadVideo = () => {
       {URLS.map((url, i) => (
         <mesh key={`${url}-${i}`} position={POSITIONS[i]} scale={SCALES[i]} name={url}>
           <planeGeometry />
-          <Suspense>
+          <Suspense fallback={null}>
             <VideoMaterial url={url} />
           </Suspense>
         </mesh>
@@ -86,4 +85,4 @@ const PreloadVideo = () => {
   );
 };
 
-export default React.memo(PreloadVideo);
+export default PreloadVideo;

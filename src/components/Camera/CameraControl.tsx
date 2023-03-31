@@ -1,6 +1,6 @@
 import { Tube, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import * as THREE from 'three';
 
 const CameraControl = () => {
@@ -35,4 +35,4 @@ const CameraControl = () => {
   );
 };
 
-export default React.memo(CameraControl);
+export default CameraControl;

@@ -6,21 +6,14 @@ import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import PreloadVideo from './components/Video/PreloadVideo';
-import { useSnapshot } from 'valtio';
-import { state } from './components/Store/store';
-import Loading from './components/Loading/Loading';
 import React from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
-  const { loadedVideoCount } = useSnapshot(state);
-
   return (
     <>
       <GlobalStyle />
-      {loadedVideoCount !== 6 ? <Loading /> : null}
       <Canvas
         gl={{ antialias: false }}
         dpr={Math.min(devicePixelRatio, 2)}
@@ -47,7 +40,6 @@ const App = () => {
             </div>
           </Scroll>
 
-          <PreloadVideo />
           <CameraControl />
           <Project />
         </ScrollControls>

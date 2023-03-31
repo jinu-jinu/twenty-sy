@@ -7,7 +7,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
     <group ref={ref}>
       <Text
         font={GANGWON_B}
-        fontSize={0.1}
+        fontSize={0}
         position={[0, 0, 0.1]}
         letterSpacing={0.04}
         fillOpacity={0}
@@ -19,7 +19,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
       </Text>
       <Text
         font={GANGWON_B}
-        fontSize={0.1}
+        fontSize={0}
         position={[0, 0, 0.1]}
         letterSpacing={0.04}
         fillOpacity={0}
@@ -31,7 +31,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
       </Text>
       <Text
         font={GANGWON_B}
-        fontSize={0.1}
+        fontSize={0}
         position={[0, 0, 0.1]}
         letterSpacing={0.05}
         fillOpacity={0}
@@ -43,7 +43,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
       </Text>
       <Text
         font={GANGWON_B}
-        fontSize={0.1}
+        fontSize={0}
         position={[0, 0, 0.1]}
         letterSpacing={0.05}
         fillOpacity={0}
@@ -55,7 +55,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
       </Text>
       <Text
         font={GANGWON_B}
-        fontSize={0.1}
+        fontSize={0}
         position={[0, 0, 0.1]}
         letterSpacing={0.05}
         fillOpacity={0}
@@ -67,7 +67,7 @@ const SubTitle4 = forwardRef((_, ref: ForwardedRef<any>) => {
       </Text>
       <Text
         font="./font/Prompt.ttf"
-        fontSize={0.3}
+        fontSize={0}
         position={[0, -0.55, 0.1]}
         letterSpacing={0.05}
         fillOpacity={0}

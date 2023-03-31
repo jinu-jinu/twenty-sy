@@ -28,13 +28,13 @@ const LoadingProgress = styled.p`
 `;
 
 const Loading = () => {
-  const { loadedVideoCount } = useSnapshot(state);
+  const { progress } = useSnapshot(state);
 
   return (
     <LoadingContainer>
       <LoadingTitleWrapper>
         <LoadingTitleText>LOADING</LoadingTitleText>
-        <LoadingProgress>{Math.round((loadedVideoCount / 6) * 100)}%</LoadingProgress>
+        <LoadingProgress>{progress}%</LoadingProgress>
       </LoadingTitleWrapper>
     </LoadingContainer>
   );
