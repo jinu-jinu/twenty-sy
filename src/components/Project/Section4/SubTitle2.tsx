@@ -3,11 +3,11 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={ref}>
+    <group ref={ref} position={[0.7, 0.7, 0]}>
       <Text
         font="./font/Prompt.ttf"
-        fontSize={0.3}
-        position={[0, 0, 0.1]}
+        fontSize={0.5}
+        position={[0, 0, 0]}
         letterSpacing={0.05}
         fillOpacity={0}
         color={'#fff'}
@@ -16,8 +16,8 @@ const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
       </Text>
       <Text
         font="./font/Prompt.ttf"
-        fontSize={0.3}
-        position={[0.04, 0.03, 0.05]}
+        fontSize={0.5}
+        position={[0.06, 0.06, -0.05]}
         letterSpacing={0.05}
         fillOpacity={0}
         color={'#ff03b8'}

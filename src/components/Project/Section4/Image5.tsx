@@ -1,32 +1,31 @@
 import { Image } from '@react-three/drei';
 import { ForwardedRef, forwardRef } from 'react';
 
-const Image3 = forwardRef((_, ref: ForwardedRef<any>) => {
+const Image5 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={ref} scale={0.5}>
+    <group ref={ref} position={[3, 1, -1]}>
       <Image
-        url={'/image/section4/s4-11.jpg'}
+        url={'/image/section4/s4-18.jpg'}
         scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[-1, -2.2, 0]}
+        position={[0, 1.1, 0]}
       />
       <Image
-        url={'/image/section4/s4-12.jpg'}
+        url={'/image/section4/s4-19.jpg'}
         scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[1.5, -2.5, 0]}
       />
       <Image
-        url={'/image/section4/s4-13.jpg'}
+        url={'/image/section4/s4-20.jpg'}
         scale={[1.75, 1]}
         transparent
         opacity={0}
-        position={[3.5, -2, 0]}
+        position={[0, -1.1, 0]}
       />
     </group>
   );
 });
 
-export default Image3;
+export default Image5;
