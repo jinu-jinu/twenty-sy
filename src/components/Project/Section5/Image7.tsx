@@ -3,7 +3,7 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const Image7 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={ref} position={[-4.5, 0, -10]} rotation={[0, Math.PI * -0.1, 0]}>
+    <group ref={ref} position={[-3.5, 0, -10]} rotation={[0, Math.PI * -0.3, 0]}>
       <Image
         url={'/image/section5/s5-17.jpg'}
         scale={[1.5 * 1.2, 1.4 * 1.2]}

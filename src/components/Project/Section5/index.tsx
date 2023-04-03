@@ -17,7 +17,7 @@ import gsap from 'gsap';
 import { Group, Mesh } from 'three';
 
 // 0.6
-const SCROLL_START = 0.6;
+const SCROLL_START = 0.04;
 
 const Section5 = () => {
   const scroll = useScroll();
@@ -36,11 +36,11 @@ const Section5 = () => {
   const [subTitle1, subTitle2] = [useRef<Group>(null!), useRef<Group>(null!)];
 
   useFrame(() => {
-    // console.log(
-    //   (scroll.offset - SCROLL_START) * 7.2 * tl.current.duration(),
-    //   tl.current.duration()
-    // );
-    tl.current.seek((scroll.offset - SCROLL_START) * 7 * tl.current.duration());
+    console.log(
+      (scroll.offset - SCROLL_START) * 7.2 * tl.current.duration(),
+      tl.current.duration()
+    );
+    tl.current.seek((scroll.offset - SCROLL_START) * 7.2 * tl.current.duration());
   });
 
   useLayoutEffect(() => {
@@ -113,6 +113,7 @@ const Section5 = () => {
         {
           opacity: 1,
           duration: 1,
+          delay: 0.5,
         },
         's5-image3'
       );
@@ -150,6 +151,7 @@ const Section5 = () => {
         {
           opacity: 1,
           duration: 1,
+          delay: 0.5,
         },
         's5-image6'
       );
@@ -181,7 +183,8 @@ const Section5 = () => {
 
   return (
     <>
-      <group position={[0, 0, -90]}>
+      {/* -90 */}
+      <group position={[0, 0, -9]}>
         <group>
           <MainTitle ref={mainTitle} />
           <MainImage ref={mainImage} />

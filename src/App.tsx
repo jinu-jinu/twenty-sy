@@ -23,7 +23,7 @@ const App = () => {
         <ambientLight intensity={1} />
         <Perf />
 
-        <ScrollControls pages={50} damping={1}>
+        <ScrollControls pages={50} damping={3}>
           <Scroll html>
             <div className="svg-container">
               <div className="box">
