@@ -1,51 +1,18 @@
 import { Image } from '@react-three/drei';
+import { ForwardedRef, forwardRef } from 'react';
 
-const Image1 = () => {
+const Image1 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group>
-      <group>
-        <Image
-          url={`/image/section1/pt4/pt4-05.webp`}
-          transparent
-          opacity={0}
-          position={[-1.7, 0, 0]}
-          scale={1.5}
-        />
-        <Image
-          url={`/image/section1/pt4/pt4-02.webp`}
-          transparent
-          opacity={0}
-          position={[0, 0, 0]}
-          scale={1.5}
-        />
-        <Image
-          url={`/image/section1/pt4/pt4-03.webp`}
-          transparent
-          opacity={0}
-          position={[1.7, 0, 0]}
-          scale={1.5}
-        />
-      </group>
-
-      <group>
-        <Image
-          url={`/image/section1/pt4/pt4-01.webp`}
-          transparent
-          opacity={0}
-          position={[-0.85, 1.85, 0]}
-          scale={[1 * 1.4, 1.3 * 1.4]}
-        />
-
-        <Image
-          url={`/image/section1/pt4/pt4-04.webp`}
-          transparent
-          opacity={0}
-          position={[0.85, -1.85, 0]}
-          scale={[1 * 1.4, 1.3 * 1.4]}
-        />
-      </group>
-    </group>
+    <Image
+      ref={ref}
+      url={'/image/section5/s5-02.jpg'}
+      scale={[1.5 * 2, 1.4 * 2]}
+      transparent
+      opacity={0}
+      position={[-4.5, 0, -0.5]}
+      rotation={[0, Math.PI * 0.4, 0]}
+    />
   );
-};
+});
 
 export default Image1;

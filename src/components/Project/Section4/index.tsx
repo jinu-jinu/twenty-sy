@@ -16,7 +16,7 @@ import { useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
 import { Group, Mesh } from 'three';
 
-const SCROLL_START = 0.38;
+const SCROLL_START = 0.385;
 
 const Section4 = () => {
   const scroll = useScroll();
@@ -212,7 +212,7 @@ const Section4 = () => {
 
   return (
     <>
-      <group position={[0, 0, -58]}>
+      <group position={[0, 0, -59]}>
         <group>
           <MainTitle ref={mainTitle} />
           <MainImage ref={mainImage} />

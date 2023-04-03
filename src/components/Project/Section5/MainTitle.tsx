@@ -1,8 +1,9 @@
 import { Text } from '@react-three/drei';
+import { ForwardedRef, forwardRef } from 'react';
 
-const MainTitle = () => {
+const MainTitle = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group rotation={[0, 0, -Math.PI * 0.5]}>
+    <group rotation={[0, 0, -Math.PI * 0.5]} ref={ref}>
       <Text
         font="/font/Prompt.ttf"
         position={[0, 0.15, 0]}
@@ -21,6 +22,6 @@ const MainTitle = () => {
       </Text>
     </group>
   );
-};
+});
 
 export default MainTitle;
