@@ -16,8 +16,7 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Group, Mesh } from 'three';
 
-// 0.6
-const SCROLL_START = 0.04;
+const SCROLL_START = 0.6;
 
 const Section5 = () => {
   const scroll = useScroll();
@@ -183,8 +182,7 @@ const Section5 = () => {
 
   return (
     <>
-      {/* -90 */}
-      <group position={[0, 0, -9]}>
+      <group position={[0, 0, -90]}>
         <group>
           <MainTitle ref={mainTitle} />
           <MainImage ref={mainImage} />
