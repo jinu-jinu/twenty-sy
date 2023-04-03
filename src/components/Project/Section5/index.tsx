@@ -182,7 +182,7 @@ const Section5 = () => {
 
   return (
     <>
-      <group position={[0, 0, -90]}>
+      <group position={[0, 0, -89]}>
         <group>
           <MainTitle ref={mainTitle} />
           <MainImage ref={mainImage} />
