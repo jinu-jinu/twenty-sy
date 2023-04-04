@@ -1,4 +1,4 @@
-import { PROMPT_SB } from '@/components/common/constant';
+import { PROMPT_SB } from '@/utils/constant';
 import { Image, Text } from '@react-three/drei';
 import { ForwardedRef, forwardRef } from 'react';
 

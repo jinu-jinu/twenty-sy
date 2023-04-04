@@ -1,4 +1,4 @@
-import { SMALL } from '@/components/common/constant';
+import { SMALL } from '@/utils/constant';
 import { useEffect, useState } from 'react';
 
 export const useDimension = () => {

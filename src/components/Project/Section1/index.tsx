@@ -1,7 +1,7 @@
 import { deviceOffset } from '@/utils/media';
 import { Text } from '@react-three/drei';
 import { useLayoutEffect, useRef } from 'react';
-import { PROMPT_B, PROMPT_SB } from '@/components/common/constant';
+import { PROMPT_B, PROMPT_SB } from '@/utils/constant';
 import gsap from 'gsap';
 import { Group } from 'three';
 

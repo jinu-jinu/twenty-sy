@@ -6,11 +6,20 @@ import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React from 'react';
+import React, { useLayoutEffect, useState } from 'react';
+import Temp from './components/common/Temp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
+  const [showProject, setShowProject] = useState(false);
+
+  useLayoutEffect(() => {
+    if (innerWidth > 1200) setShowProject(true);
+  }, []);
+
+  if (!showProject) return <Temp />;
+
   return (
     <>
       <GlobalStyle />

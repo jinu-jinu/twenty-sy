@@ -5,67 +5,10 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Moments</title>
-    <style>
-      @keyframes load {
-        0% { transform: translateY(0) }
-        20% { transform: translateY(-14px) }
-        40% { transform: translateY(0) }
-      }
-      
-      .loading{
-        background-color: cornflowerblue;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-      }
-
-      .loading-wrapper{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-      }
-
-      .loading{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .circle{
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        margin: 6px;
-        animation: load 2s ease-in-out infinite;
-        background-color: #fff;
-      }
-
-      .circle:nth-child(2){
-        animation-delay: 0.2s;
-      }
-
-      .circle:nth-child(3){
-        animation-delay: 0.4s;
-      }
-    </style>
   </head>
   <body>
     <div id="root"></div>
     
-    <div id="loading">
-      <div class="loading-wrapper">
-        <div class="loading">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
-      </div>
-    </div>
    
 
     <script type="module" src="/src/main.tsx"></script>

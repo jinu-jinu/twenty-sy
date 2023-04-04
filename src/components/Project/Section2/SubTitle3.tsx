@@ -1,4 +1,4 @@
-import { GANGWON_B } from '@/components/common/constant';
+import { GANGWON_B } from '@/utils/constant';
 import { Text } from '@react-three/drei';
 import { ForwardedRef, forwardRef } from 'react';
 
