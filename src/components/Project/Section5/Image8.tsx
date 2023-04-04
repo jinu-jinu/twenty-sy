@@ -6,11 +6,11 @@ const Image8 = forwardRef((_, ref: ForwardedRef<any>) => {
     <Image
       ref={ref}
       url={'/image/section5/s5-19.webp'}
-      scale={[1.4 * 2, 1.75 * 2]}
+      scale={[1.4 * 2, 1.6 * 2]}
       transparent
       opacity={0}
-      position={[4.5, 0, -12]}
-      rotation={[0, Math.PI * -0.4, 0]}
+      position={[2.5, 0, -11.5]}
+      rotation={[0, Math.PI * -0.1, 0]}
     />
   );
 });

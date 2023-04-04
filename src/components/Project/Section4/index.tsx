@@ -11,12 +11,12 @@ import Image5 from './Image5';
 import Image6 from './Image6';
 import ImageTitle1 from './ImageTitle1';
 import { useLayoutEffect, useRef } from 'react';
-import { useScroll } from '@react-three/drei';
+import { Float, useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import gsap from 'gsap';
 import { Group, Mesh } from 'three';
 
-const SCROLL_START = 0.385;
+const SCROLL_START = 0.355;
 
 const Section4 = () => {
   const scroll = useScroll();
@@ -34,7 +34,7 @@ const Section4 = () => {
     useRef<Group>(null!),
     useRef<Group>(null!),
   ];
-  const [subTitle1, subTitle2, subTitle3, subTitle4] = [
+  const [subTitle1, subTitle2, subTitle3] = [
     useRef<Group>(null!),
     useRef<Group>(null!),
     useRef<Group>(null!),
@@ -73,8 +73,8 @@ const Section4 = () => {
       tl.current.to(
         material,
         {
-          opacity: 0.8,
-          duration: 1,
+          opacity: 1,
+          duration: 2,
         },
         `s4-main-image${i - 1}`
       );
@@ -82,21 +82,22 @@ const Section4 = () => {
         material,
         {
           opacity: 0,
-          duration: 1.5,
+          duration: 2.5,
         },
         `s4-main-image${i}`
       );
     });
 
-    // sub1, sub2, sub3
+    // sub1
     subTitle1.current.children.forEach(c => {
       tl.current.to(
         c,
         {
           fillOpacity: 1,
-          duration: 1.5,
+          duration: 1,
+          delay: 0.5,
         },
-        's4-sub1'
+        's4-sub1-title'
       );
     });
 
@@ -106,20 +107,46 @@ const Section4 = () => {
         material,
         {
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
         },
-        's4-sub1'
+        's4-sub1-image'
       );
     });
 
+    subTitle1.current.children.forEach(c => {
+      tl.current.to(
+        c,
+        {
+          fillOpacity: 0,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-sub1-end'
+      );
+    });
+    image1.current.children.forEach(c => {
+      const material = (c as Mesh).material;
+      tl.current.to(
+        material,
+        {
+          opacity: 0,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-sub1-end'
+      );
+    });
+
+    // sub2
     subTitle2.current.children.forEach(c => {
       tl.current.to(
         c,
         {
           fillOpacity: 1,
-          duration: 1.5,
+          duration: 1,
+          delay: 0.5,
         },
-        's4-sub2'
+        's4-sub2-title'
       );
     });
 
@@ -129,20 +156,46 @@ const Section4 = () => {
         material,
         {
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
         },
-        's4-sub2'
+        's4-sub2-image'
       );
     });
 
+    subTitle2.current.children.forEach(c => {
+      tl.current.to(
+        c,
+        {
+          fillOpacity: 0,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-sub2-end'
+      );
+    });
+    image2.current.children.forEach(c => {
+      const material = (c as Mesh).material;
+      tl.current.to(
+        material,
+        {
+          opacity: 0,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-sub2-end'
+      );
+    });
+
+    // sub3
     subTitle3.current.children.forEach(c => {
       tl.current.to(
         c,
         {
           fillOpacity: 1,
-          duration: 1.5,
+          duration: 1,
+          delay: 0.5,
         },
-        's4-sub3'
+        's4-sub3-title'
       );
     });
 
@@ -152,11 +205,36 @@ const Section4 = () => {
         material,
         {
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
         },
-        's4-sub3'
+        's4-sub3-image'
       );
-    }); // 14.5
+    });
+
+    subTitle3.current.children.forEach(c => {
+      tl.current.to(
+        c,
+        {
+          fillOpacity: 0,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-sub3-end'
+      );
+    });
+
+    image3.current.children.forEach(c => {
+      const material = (c as Mesh).material;
+      tl.current.to(
+        material,
+        {
+          opacity: 0,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-sub3-end'
+      );
+    });
 
     // imagetitle1, image4,5,6
     imageTitle1.current.children.forEach(c => {
@@ -168,8 +246,8 @@ const Section4 = () => {
           material,
           {
             opacity: 1,
-            duration: 0.5,
-            delay: 2,
+            duration: 1,
+            delay: 1,
           },
           's4-imageTitle1'
         );
@@ -178,8 +256,8 @@ const Section4 = () => {
           c,
           {
             fillOpacity: 1,
-            duration: 0.5,
-            delay: 2,
+            duration: 1,
+            delay: 1,
           },
           's4-imageTitle1'
         );
@@ -187,45 +265,72 @@ const Section4 = () => {
 
     image4.current.children.forEach(c => {
       const material = (c as Mesh).material;
-      tl.current.to(material, {
-        opacity: 1,
-        duration: 0.5,
-      });
+      tl.current.to(
+        material,
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-imag4'
+      );
     });
 
     image5.current.children.forEach(c => {
       const material = (c as Mesh).material;
-      tl.current.to(material, {
-        opacity: 1,
-        duration: 0.5,
-      });
+      tl.current.to(
+        material,
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-image5'
+      );
     });
 
     image6.current.children.forEach(c => {
       const material = (c as Mesh).material;
-      tl.current.to(material, {
-        opacity: 1,
-        duration: 0.4,
-      });
+      tl.current.to(
+        material,
+        {
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+        },
+        's4-image6'
+      );
     });
   }, []);
 
   return (
     <>
-      <group position={[0, 0, -59]}>
+      <group position={[0, 0, -54.5]}>
         <group>
           <MainTitle ref={mainTitle} />
           <MainImage ref={mainImage} />
         </group>
 
-        <group position={[-0.3, -0.1, -17]}>
-          <SubTitle1 ref={subTitle1} />
-          <Image1 ref={image1} />
-          <SubTitle2 ref={subTitle2} />
-          <Image2 ref={image2} />
-          <SubTitle3 ref={subTitle3} />
-          <Image3 ref={image3} />
-        </group>
+        <Float speed={1.5} floatIntensity={0.5} rotationIntensity={0.2}>
+          <group position={[0, -0.1, -13]}>
+            <SubTitle1 ref={subTitle1} />
+            <Image1 ref={image1} />
+          </group>
+        </Float>
+
+        <Float speed={1.5} floatIntensity={0.5} rotationIntensity={0.2}>
+          <group position={[0, -0.9, -17]}>
+            <SubTitle2 ref={subTitle2} />
+            <Image2 ref={image2} />
+          </group>
+        </Float>
+
+        <Float speed={1.5} floatIntensity={0.5} rotationIntensity={0.2}>
+          <group position={[-0.5, 0.5, -20]}>
+            <SubTitle3 ref={subTitle3} />
+            <Image3 ref={image3} />
+          </group>
+        </Float>
 
         <group position={[0, -0.15, -27]}>
           <ImageTitle1 ref={imageTitle1} />

@@ -16,7 +16,7 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Group, Mesh } from 'three';
 
-const SCROLL_START = 0.6;
+const SCROLL_START = 0.575;
 
 const Section5 = () => {
   const scroll = useScroll();
@@ -35,10 +35,10 @@ const Section5 = () => {
   const [subTitle1, subTitle2] = [useRef<Group>(null!), useRef<Group>(null!)];
 
   useFrame(() => {
-    console.log(
-      (scroll.offset - SCROLL_START) * 7.2 * tl.current.duration(),
-      tl.current.duration()
-    );
+    // console.log(
+    //   (scroll.offset - SCROLL_START) * 7.2 * tl.current.duration(),
+    //   tl.current.duration()
+    // );
     tl.current.seek((scroll.offset - SCROLL_START) * 7.2 * tl.current.duration());
   });
 
@@ -68,7 +68,7 @@ const Section5 = () => {
       })
       .to(mainImage.current.material, {
         opacity: 0,
-        duration: 2.5,
+        duration: 3,
       });
 
     // subtitle
@@ -162,27 +162,21 @@ const Section5 = () => {
         material,
         {
           opacity: 1,
-          duration: 1.5,
-          delay: 0.5,
+          duration: 1,
         },
-        's5-image7-8'
+        's5-image7'
       );
     });
 
-    tl.current.to(
-      image8.current.material,
-      {
-        opacity: 1,
-        duration: 1.5,
-        delay: 0.5,
-      },
-      's5-image7-8'
-    );
+    tl.current.to(image8.current.material, {
+      opacity: 1,
+      duration: 1,
+    });
   }, []);
 
   return (
     <>
-      <group position={[0, 0, -89]}>
+      <group position={[0, 0, -86]}>
         <group>
           <MainTitle ref={mainTitle} />
           <MainImage ref={mainImage} />

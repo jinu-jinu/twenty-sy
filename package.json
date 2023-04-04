@@ -11,12 +11,9 @@
   "dependencies": {
     "@react-three/drei": "^9.53.0",
     "@react-three/fiber": "^8.9.1",
-    "@react-three/postprocessing": "^2.7.0",
-    "@react-three/rapier": "^0.11.2",
     "gsap": "^3.11.4",
     "leva": "^0.9.34",
     "patch-package": "^6.5.1",
-    "postprocessing": "^6.29.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6",

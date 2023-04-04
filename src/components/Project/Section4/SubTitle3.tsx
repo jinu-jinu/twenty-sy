@@ -10,14 +10,14 @@ const SubTitle3 = forwardRef((_, ref: ForwardedRef<any>) => {
         position={[0, 0, 0]}
         letterSpacing={0.05}
         fillOpacity={0}
-        color={'#2bffb8'}
+        color={'#3ac697'}
       >
         "민초? 뱉어줄게"
       </Text>
       <Text
         font="./font/Gangwon.ttf"
         fontSize={0.07}
-        position={[0.4, -0.2, 0]}
+        position={[0.6, -0.3, 0]}
         letterSpacing={0.05}
         fillOpacity={0}
         color={'#fff'}

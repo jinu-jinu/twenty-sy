@@ -3,27 +3,27 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const Image2 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={ref} scale={0.6}>
+    <group ref={ref} scale={1}>
       <Image
-        url={'/image/section4/s4-08.jpg'}
-        scale={[1.75, 1]}
+        url={'/image/section6/s6-04.jpg'}
+        scale={[1.5 * 5, 1 * 5]}
         transparent
         opacity={0}
-        position={[2.5, 0.2, 0.1]}
+        position={[0, -0.2, -0.5]}
       />
       <Image
-        url={'/image/section4/s4-09.jpg'}
-        scale={[1 * 2.8, 1.25 * 2.8]}
+        url={'/image/section6/s6-05.jpg'}
+        scale={[1 * 1.8, 1.25 * 1.8]}
         transparent
         opacity={0}
-        position={[2, 1.8, -0.5]}
+        position={[1.5, 1.8, -0.1]}
       />
       <Image
-        url={'/image/section4/s4-10.jpg'}
-        scale={[1.4, 1]}
+        url={'/image/section6/s6-06.jpg'}
+        scale={[1.3 * 2.3, 1 * 2.3]}
         transparent
         opacity={0}
-        position={[3, 3, 0]}
+        position={[-2.4, -1.7, -0.1]}
       />
     </group>
   );

@@ -101,7 +101,7 @@ const Section2 = () => {
     tl.current.to(subTitle3.current, {
       fillOpacity: 1,
       duration: 0.5,
-      delay: 1.2,
+      delay: 1.5,
     });
     image3.current.children.forEach(c => {
       const material = (c as Mesh).material;
@@ -138,7 +138,7 @@ const Section2 = () => {
         <Image2 ref={image2} />
       </group>
 
-      <group position={[0, 0, -16]}>
+      <group position={[0, 0, -17]}>
         <SubTitle3 ref={subTitle3} />
         <Image3 ref={image3} />
       </group>

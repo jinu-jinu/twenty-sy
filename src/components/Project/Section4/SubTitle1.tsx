@@ -4,7 +4,7 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const SubTitle1 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={ref} position={[-0.2, 0, 0]}>
+    <group ref={ref} position={[-1.2, 0.6, 0]}>
       <Text
         font={PROMPT_B}
         fontSize={0.5}

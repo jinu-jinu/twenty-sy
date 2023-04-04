@@ -51,35 +51,35 @@ const Image1 = forwardRef((_, ref: ForwardedRef<any>) => {
         scale={[1.2, 1]}
         transparent
         opacity={0}
-        position={[-1, -1, -3]}
+        position={[-1.5, -1, -3.5]}
       />
       <Image
         url={'/image/section3/s3-09.jpg'}
         scale={[1.3, 1]}
         transparent
         opacity={0}
-        position={[1, 0, -3.5]}
+        position={[1, 0, -4]}
       />
       <Image
         url={'/image/section3/s3-10.jpg'}
         scale={[1.1, 1]}
         transparent
         opacity={0}
-        position={[-1, 0.8, -4.5]}
+        position={[-1.2, 0.8, -5]}
       />
       <Image
         url={'/image/section3/s3-11.jpg'}
         scale={[1, 1]}
         transparent
         opacity={0}
-        position={[-0.5, -0.6, -5]}
+        position={[-1, -1, -6]}
       />
       <Image
         url={'/image/section3/s3-12.jpg'}
         scale={[1.1, 1]}
         transparent
         opacity={0}
-        position={[1, 0.5, -5.5]}
+        position={[1, 0.5, -6.5]}
       />
     </group>
   );

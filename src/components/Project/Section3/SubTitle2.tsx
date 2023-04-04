@@ -8,7 +8,7 @@ const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
       lineHeight={1.2}
       anchorX={0.45}
       font="/font/Gangwon.ttf"
-      position={[0, 0, 2.5]}
+      position={[0, 0, 3]}
       fontSize={0.1}
       fillOpacity={0}
       maxWidth={1}

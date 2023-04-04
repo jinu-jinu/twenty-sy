@@ -2,30 +2,28 @@ import MainTitle from './MainTitle';
 import MainImage from './MainImage';
 import SubTitle1 from './SubTitle1';
 import SubTitle2 from './SubTitle2';
-import SubTitle3 from './SubTitle3';
 import Image1 from './Image1';
 import Image2 from './Image2';
-import Image3 from './Image3';
 import ModelHeart from './ModelHeart';
 import { useScroll } from '@react-three/drei';
 import { useLayoutEffect, useRef } from 'react';
 import { Group, Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
-import gsap, { Bounce, Power0 } from 'gsap';
+import gsap, { Bounce } from 'gsap';
 
-const SCROLL_START = 0.18;
+const SCROLL_START = 0.185;
 
 const Section3 = () => {
   const scroll = useScroll();
   const tl = useRef<gsap.core.Timeline>(null!);
   const mainTitle = useRef<Group>(null!);
   const heart = useRef<any>();
-  const [subTitle1, subTitle2, subTitle3] = [
+  const [subTitle1, subTitle2] = [
     useRef<Group>(null!),
     useRef<any>(),
     useRef<Group>(null!),
   ];
-  const [mainImage, image1, image2, image3] = [
+  const [mainImage, image1, image2] = [
     useRef<any>(),
     useRef<Group>(null!),
     useRef<Group>(null!),
@@ -34,11 +32,11 @@ const Section3 = () => {
 
   useFrame(() => {
     // console.log(
-    //   (scroll.offset - SCROLL_START) * 5.3 * tl.current.duration(),
+    //   (scroll.offset - SCROLL_START) * 6.5 * tl.current.duration(),
     //   tl.current.duration()
     // );
 
-    tl.current.seek((scroll.offset - SCROLL_START) * 5.3 * tl.current.duration());
+    tl.current.seek((scroll.offset - SCROLL_START) * 6.5 * tl.current.duration());
   });
 
   useLayoutEffect(() => {
@@ -63,7 +61,7 @@ const Section3 = () => {
     tl.current
       .to(mainImage.current.material, {
         opacity: 1,
-        duration: 3,
+        duration: 2,
       })
       .to(mainImage.current.material, {
         opacity: 0,
@@ -76,7 +74,7 @@ const Section3 = () => {
         c,
         {
           fillOpacity: 1,
-          duration: 0.5,
+          duration: 0.6,
         },
         'sub-title1'
       );
@@ -95,7 +93,8 @@ const Section3 = () => {
     tl.current
       .to(subTitle2.current, {
         fillOpacity: 1,
-        duration: 0.95,
+        duration: 1,
+        delay: 0.2,
       })
       .to(heart.current.scale, {
         x: 0.3,
@@ -112,34 +111,10 @@ const Section3 = () => {
         {
           opacity: 1,
           duration: 1.3,
+          delay: 0.65,
         },
         's3-sub2-image'
       );
-    });
-
-    // sub3
-    image3.current.children.forEach(c => {
-      const material = (c as Mesh).material;
-      tl.current.to(
-        material,
-        {
-          opacity: 1,
-          delay: 1,
-          duration: 1,
-        },
-        's3-sub3-image'
-      );
-    });
-
-    subTitle3.current.children.forEach((c, i, arr) => {
-      const last = i === arr.length - 1;
-
-      tl.current.to(c, {
-        fillOpacity: 1,
-        fontSize: last ? 0.3 : 0.1,
-        duration: 0.5,
-        ease: last ? Bounce.easeOut : Power0.easeNone,
-      });
     });
 
     return () => {
@@ -149,7 +124,7 @@ const Section3 = () => {
   }, []);
 
   return (
-    <group position={[0, 0, -29]}>
+    <group position={[0, 0, -30]}>
       <group>
         <MainTitle ref={mainTitle} />
         <MainImage ref={mainImage} />
@@ -160,15 +135,12 @@ const Section3 = () => {
         <Image1 ref={image1} />
       </group>
 
-      <group position={[0, 0, -19]}>
-        <SubTitle2 ref={subTitle2} />
-        <ModelHeart ref={heart} />
+      <group position={[0, 0, -21]}>
+        <group scale={1.2}>
+          <SubTitle2 ref={subTitle2} />
+          <ModelHeart ref={heart} />
+        </group>
         <Image2 ref={image2} />
-      </group>
-
-      <group position={[0, -0.2, -26]}>
-        <SubTitle3 ref={subTitle3} />
-        <Image3 ref={image3} />
       </group>
     </group>
   );

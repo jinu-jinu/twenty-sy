@@ -1,9 +1,7 @@
-import { Text, useTexture } from '@react-three/drei';
+import { Text } from '@react-three/drei';
 import { ForwardedRef, forwardRef } from 'react';
 
 const SubTitle1 = forwardRef((_, ref: ForwardedRef<any>) => {
-  const texture = useTexture('./image/gradations/palette.png');
-
   return (
     <group position={[0, 0, 1.5]} ref={ref}>
       <Text
