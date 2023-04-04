@@ -1,3 +1,4 @@
+import { GANGWON_B } from '@/utils/constant';
 import { Text } from '@react-three/drei';
 import { ForwardedRef, forwardRef } from 'react';
 
@@ -8,7 +9,7 @@ const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
         position={[-1.2, 1.3, 0]}
         lineHeight={1.2}
         letterSpacing={0.05}
-        font="/font/Gangwon.ttf"
+        font={GANGWON_B}
         fontSize={0.15}
         fillOpacity={0}
         maxWidth={2.5}
@@ -21,7 +22,7 @@ const SubTitle2 = forwardRef((_, ref: ForwardedRef<any>) => {
         position={[1, -0.6, 0]}
         lineHeight={1.2}
         letterSpacing={0.05}
-        font="/font/Gangwon.ttf"
+        font={GANGWON_B}
         fontSize={0.2}
         fillOpacity={0}
         maxWidth={3}

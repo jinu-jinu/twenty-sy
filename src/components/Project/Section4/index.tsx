@@ -42,10 +42,6 @@ const Section4 = () => {
   ];
 
   useFrame(() => {
-    // console.log(
-    //   (scroll.offset - SCROLL_START) * 5.3 * tl.current.duration(),
-    //   tl.current.duration()
-    // );
     tl.current.seek((scroll.offset - SCROLL_START) * 5.3 * tl.current.duration());
   });
 

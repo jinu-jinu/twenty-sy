@@ -15,9 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  #root:not(:empty) ~ #loading {
-    display: none;
-  }
 
   html,
   body,

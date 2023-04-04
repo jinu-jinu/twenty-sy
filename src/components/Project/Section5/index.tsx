@@ -35,10 +35,6 @@ const Section5 = () => {
   const [subTitle1, subTitle2] = [useRef<Group>(null!), useRef<Group>(null!)];
 
   useFrame(() => {
-    // console.log(
-    //   (scroll.offset - SCROLL_START) * 7.2 * tl.current.duration(),
-    //   tl.current.duration()
-    // );
     tl.current.seek((scroll.offset - SCROLL_START) * 7.2 * tl.current.duration());
   });
 

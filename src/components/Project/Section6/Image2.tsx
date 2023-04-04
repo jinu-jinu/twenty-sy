@@ -3,7 +3,7 @@ import { ForwardedRef, forwardRef } from 'react';
 
 const Image2 = forwardRef((_, ref: ForwardedRef<any>) => {
   return (
-    <group ref={ref} scale={1}>
+    <group ref={ref}>
       <Image
         url={'/image/section6/s6-04.jpg'}
         scale={[1.5 * 5, 1 * 5]}
