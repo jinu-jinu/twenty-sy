@@ -2,7 +2,6 @@ import { GlobalStyle } from './globalStyle';
 import { Canvas } from '@react-three/fiber';
 import { Scroll, ScrollControls, Sparkles } from '@react-three/drei';
 import Project from './components/Project';
-import { Perf } from 'r3f-perf';
 import CameraControl from './components/Camera/CameraControl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -30,7 +29,6 @@ const App = () => {
       >
         <Sparkles count={1000} size={3} scale={[20, 10, 170]} position={[0, 0, -85]} />
         <ambientLight intensity={1} />
-        <Perf />
 
         <ScrollControls pages={60} damping={1}>
           <Scroll html>
