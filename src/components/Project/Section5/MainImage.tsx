@@ -9,7 +9,7 @@ const MainImage = forwardRef((_, ref: ForwardedRef<any>) => {
       scale={[12, 8]}
       transparent
       opacity={0}
-      position={[0, 0, -5]}
+      position={[0, 0, -3]}
     />
   );
 });

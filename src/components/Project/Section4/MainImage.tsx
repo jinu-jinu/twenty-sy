@@ -9,7 +9,7 @@ const MainImage = forwardRef((_, ref: ForwardedRef<any>) => {
         scale={[12, 8]}
         transparent
         opacity={0}
-        position={[0, 0, -3]}
+        position={[0, 0, -2.5]}
       />
       <Image
         url={'/image/section4/s4-02.jpg'}

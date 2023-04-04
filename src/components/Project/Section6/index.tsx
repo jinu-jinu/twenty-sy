@@ -183,12 +183,12 @@ const Section6 = () => {
         <MainImage ref={mainImage} />
       </group>
 
-      <group position={[0, 0, -16]} scale={4}>
+      <group position={[0, 0, -16]} scale={5}>
         <SubTitle1 ref={subTitle1} />
         <Image1 ref={image1} />
       </group>
 
-      <group position={[0, 0, -22]}>
+      <group position={[0, 0, -26]} scale={2}>
         <SubTitle2 ref={subTitle2} />
         <Image2 ref={image2} />
       </group>
